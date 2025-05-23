@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <Placa>1</Placa>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Marca>FORD</Marca>
+    <SUBMARCA>EXPLORER</SUBMARCA>
+    <capacidad>1250</capacidad>
+    <ID_Pago>1</ID_Pago>
+    <Fecha>2025-05-05</Fecha>
+    <Monto>350</Monto>
+    <Servicio>Pago Referenciado</Servicio>
+    <Hora>00:00:01</Hora>
+  </Conductor>
+  <Conductor>
+    <Placa>3</Placa>
+    <Modelo>3</Modelo>
+    <Color>3</Color>
+    <Marca>3</Marca>
+    <SUBMARCA/>
+    <capacidad>0</capacidad>
+    <ID_Pago>3</ID_Pago>
+    <Fecha>0033-03-03</Fecha>
+    <Monto>3</Monto>
+    <Servicio>3</Servicio>
+    <Hora>03:33:00</Hora>
+  </Conductor>
+</Conductores>

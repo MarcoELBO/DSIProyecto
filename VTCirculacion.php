@@ -111,7 +111,7 @@ $pdf->SetXY(3, 36);
 $pdf->SetFont('Arial', '', 4);
 $pdf->Cell(30, 1, $Fila[18], 0);
 
-$pdf->Image('Q1.png', 15, 37, 20, 10);
+$pdf->Image('Imagenes/Q1.png', 15, 37, 20, 10);
 $pdf->SetXY(38, 40);
 $pdf->SetFont('Arial', 'B', 5);
 $pdf->Cell(30, 2, 'PODER  EJECUTIVO  DEL', 0, 1);
@@ -121,7 +121,7 @@ $pdf->SetFont('Arial', '', 3);
 $pdf->SetX(38);
 $pdf->Cell(30, 2, 'SECRETARIA DE SEGURIDAD CIUDADANA', 0, 1);
 
-$pdf->Image('rectangulo.png', 16.8, 44, 52, 30);
+$pdf->Image('Imagenes/rectangulo.png', 16.8, 44, 52, 30);
 $pdf->SetXY(0, 50.5);
 $pdf->SetFont('Arial', '', 6);
 $pdf->SetTextColor(255, 255, 255);
@@ -133,9 +133,9 @@ $pdf->SetFont('Arial', 'B', 8);
 $pdf->SetTextColor(0, 0, 0);
 $pdf->MultiCell(1, 2.5, 'A1679305', 0, 'C');
 
-$pdf->Image('QR.png', 68, 38, 15, 15);
+$pdf->Image('Imagenes/QR.png', 68, 38, 15, 15);
 
-$pdf->Image('LQ.png', 4, 40, 10, 10);
+$pdf->Image('Imagenes/LQ.png', 4, 40, 10, 10);
 
 $pdf->Output();
 ?>
