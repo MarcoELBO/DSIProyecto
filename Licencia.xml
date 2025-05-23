@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <ID_LICENCIA>1</ID_LICENCIA>
+    <NOMBRE>Marco Elias Bautista Olvera</NOMBRE>
+    <FECHA_NACIMIENTO>2000-07-05</FECHA_NACIMIENTO>
+    <FECHA_EXPEDICION>2025-02-01</FECHA_EXPEDICION>
+    <FECHA_VALIDACION>2025-02-01</FECHA_VALIDACION>
+    <ANTIGUEDAD>1</ANTIGUEDAD>
+  </Conductor>
+  <Conductor>
+    <CALLE>Tijuana</CALLE>
+    <MUNICIPIO>Santa Rosa</MUNICIPIO>
+    <CP>76210</CP>
+    <ESTADO>Queretaro</ESTADO>
+    <TIPO_SANGRE>+A</TIPO_SANGRE>
+    <DONADOR_ORG>Si</DONADOR_ORG>
+    <NUMERO_EMERGENCIA>000-446-105-3431</NUMERO_EMERGENCIA>
+  </Conductor>
+</Conductores>

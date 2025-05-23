@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Formulario de Licencias</h2>
+    <form method="POST" action="ILicencias.php">
+        <label>ID Licencia:</label>
+        <input type="text" id="id_licencia" name="id_licencia" required="required"><br><br>
+
+        <label>Propietario:</label>
+        <input type="number" id="conductor" name="conductor" required="required"><br><br>
+
+        <label>Fecha de Expedición:</label>
+        <input type="date" id="fecha_expedicion" name="fecha_expedicion" required="required"><br><br>
+
+        <label>Fecha de Validación:</label>
+        <input type="date" id="fecha_validacion" name="fecha_validacion" required="required"><br><br>
+
+        <label>Antiguedad:</label>
+        <input type="number" id="antiguedad" name="antiguedad" required="required"><br><br>
+
+        <label>Observaciones:</label><br>
+        <input type="text" id="observaciones" name="observaciones"></textarea><br><br>
+
+        <label>Firma:</label>
+        <input type="file" id="firma" name="firma" maxlength="100" required="required"><br><br>
+
+        <label>Domicilio:</label>
+        <input type="number" id="domicilio" name="domicilio" required="required"><br><br>
+
+        <label>Fundamento Legal:</label><br>
+        <input type="text" id="fundamento_legal" name="fundamento_legal" required="required"></textarea><br><br>
+
+        <label>Foto:</label>
+        <input type="file" id="foto" name="foto"><br><br>
+        <input type="submit" value="Enviar">
+</body>
+
+</html>

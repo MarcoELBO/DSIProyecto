@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <title>Menu Desplegable</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        .nav>li {
+            float: left;
+        }
+
+        .nav li a {
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 12px;
+            display: block;
+        }
+
+        .nav li a:hover {
+            background-color: #434343;
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            min-width: 140px;
+        }
+
+        .nav li:hover>ul {
+            display: block;
+        }
+
+        .nav li ul li {
+            position: relative;
+        }
+
+        .nav li ul li ul {
+            right: -140px;
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <ul class="nav">
+            <li><a href="">Centros Verificaciones</a>
+                <ul>
+                    <li><a href="FSCentrosVerificacion.html">CONSULTAR</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Conductores</a>
+                <ul>
+                    <li><a href="FSConductores.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Domicilios</a>
+                <ul>
+                    <li><a href="FSDomicilios.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Licencias</a>
+                <ul>
+                    <li><a href="FSLicencias.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Oficiales</a>
+                <ul>
+                    <li><a href="FSOficiales.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Pagos</a>
+                <ul>
+                    <li><a href="FSPagos.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Propietarios</a>
+                <ul>
+                    <li><a href="FSPropietarios.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Tarjetas de Circulacion</a>
+                <ul>
+                    <li><a href="FSTarjetas_Circulacion.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Tarjetas de Verificaciones</a>
+                <ul>
+                    <li><a href="FSTarjetas_Verificacion.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li><a href="">Vehiculo</a>
+                <ul>
+                    <li><a href="FSVehiculos.html">CONSULTAR</a></li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+</body>
+
+</html>
