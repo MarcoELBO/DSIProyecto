@@ -35,11 +35,11 @@ $pdf->Cell(0, 8, 'Transaccion: ' . $Fila[6], 0, 1);
 $pdf->Cell(0, 8, 'Fecha limite para el pago: ' . $Fila[7], 0, 1);
 $pdf->Cell(0, 8, 'Importe: $' . $Fila[8], 0, 1);
 $pdf->SetXY(108, 81);
-$pdf->Cell(0, 8, 'Tipo de instrumento de pago: ' . $Fila[9], 0, 1);
+$pdf->Cell(0, 8, 'Tipo de instrumento de pago: Pago referendado', 0, 1);
 $pdf->SetX(108);
 $pdf->Cell(0, 8, 'Fecha actual: ' . $Fila[7], 0, 1);
 $pdf->SetX(108);
-$pdf->Cell(0, 8, 'Hora: ' . $Fila[10], 0, 1);
+$pdf->Cell(0, 8, 'Hora: ' . $Fila[9], 0, 1);
 
 $pdf->Ln(5);
 $pdf->SetFont('Arial', 'I', 9);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <Folio>3</Folio>
+    <Fecha>2003-03-20</Fecha>
+    <Hora>15:33:00</Hora>
+    <Lugar>Carretera 57</Lugar>
+    <NOMBRE>3</NOMBRE>
+    <NO_LICENCIA>3</NO_LICENCIA>
+    <DOMICILIO>3</DOMICILIO>
+    <Placa>3</Placa>
+    <Marca>3</Marca>
+    <Modelo>3</Modelo>
+    <Color>3</Color>
+    <Motivo>3</Motivo>
+    <NombreO>3</NombreO>
+    <ID_Oficial>3</ID_Oficial>
+    <Observaciones>Estaba en estado de ebriedad</Observaciones>
+  </Conductor>
+</Conductores>

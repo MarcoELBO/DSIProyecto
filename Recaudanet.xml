@@ -8,9 +8,8 @@
     <SUBMARCA>EXPLORER</SUBMARCA>
     <capacidad>1250</capacidad>
     <ID_Pago>1</ID_Pago>
-    <Fecha>2025-05-05</Fecha>
-    <Monto>350</Monto>
-    <Servicio>Pago Referenciado</Servicio>
+    <Fecha>0000-00-00</Fecha>
+    <Monto>1</Monto>
     <Hora>00:00:01</Hora>
   </Conductor>
   <Conductor>
@@ -23,7 +22,6 @@
     <ID_Pago>3</ID_Pago>
     <Fecha>0033-03-03</Fecha>
     <Monto>3</Monto>
-    <Servicio>3</Servicio>
     <Hora>03:33:00</Hora>
   </Conductor>
 </Conductores>
