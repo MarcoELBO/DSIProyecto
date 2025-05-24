@@ -23,8 +23,8 @@ try {
     $SQL = "INSERT INTO pagos VALUES (NULL,'$Servicio', '$Monto', '$Fecha', '$Hora', '$Tarjeta_Asociada')";
 
     // Incluir el controlador de la base de datos y establecer la conexión
-    include("controlador.php");
-    $Conexion = conectar();
+    include("Controlador.php");
+    $Conexion = Conectar();
 
     // Comprobar si la conexión fue exitosa
     if (!$Conexion) {
@@ -32,8 +32,8 @@ try {
     }
 
     // Ejecutar la instrucción SQL
-    // Asumo que la función ejecutar() devuelve 1 para éxito y 0/false para fallo.
-    $ResultSet = ejecutar($Conexion, $SQL);
+    // Asumo que la función Ejecutar() devuelve 1 para éxito y 0/false para fallo.
+    $ResultSet = Ejecutar($Conexion, $SQL);
 
     // Desconectar la base de datos
     Desconectar($Conexion);

@@ -25,16 +25,9 @@ try {
     // Para proyectos de producción, se recomienda encarecidamente usar sentencias preparadas.
     // Se mantiene 'NULL' para la primera columna (asumo que es un ID AUTO_INCREMENT).
     $SQL = "INSERT INTO licencias VALUES (NULL, '$conductor', '$Fecha_expedicion', '$Fecha_validacion', '$antiguedad', '$observaciones', '$firma', '$Domicilio', '$fundamento_legal', '$foto')";
-
-include("controlador.php");
-
-$Conexion = conectar();
-
-$ResultSet = ejecutar($Conexion, $SQL);
-
     // Incluir el controlador de la base de datos y establecer la conexión
-    include("controlador.php");
-    $Conexion = conectar();
+    include("Controlador.php");
+    $Conexion = Conectar();
 
     // Comprobar si la conexión fue exitosa
     if (!$Conexion) {
@@ -43,7 +36,7 @@ $ResultSet = ejecutar($Conexion, $SQL);
 
     // Ejecutar la instrucción SQL
     // Asumo que la función ejecutar() devuelve 1 para éxito y 0/false para fallo.
-    $ResultSet = ejecutar($Conexion, $SQL);
+    $ResultSet = Ejecutar($Conexion, $SQL);
 
     // Desconectar la base de datos
     Desconectar($Conexion);

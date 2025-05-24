@@ -15,8 +15,8 @@
 
 
     // --- 2. Conexión a la Base de Datos ---
-    include("controlador.php"); // Asumo que este archivo contiene las funciones conectar() y Desconectar()
-    $conexion = conectar();
+    include("Controlador.php"); // Asumo que este archivo contiene las funciones conectar() y Desconectar()
+    $conexion = Conectar();
 
     if (!$conexion) {
         die("Error al conectar a la base de datos: " . mysqli_connect_error());

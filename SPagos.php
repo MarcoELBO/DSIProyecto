@@ -24,14 +24,14 @@
     $sql = "SELECT * FROM pagos WHERE $atributo LIKE '$criterio';"; // Agregado '%' para búsqueda parcial
 
     // Enviar la instruccion al SMBD
-    include("controlador.php");
-    $conexion = conectar();
+    include("Controlador.php");
+    $conexion = Conectar();
 
     if (!$conexion) {
         die("Error al conectar a la base de datos.");
     }
 
-    $ResultSet = ejecutar($conexion, $sql);
+    $ResultSet = Ejecutar($conexion, $sql);
 
     if (!$ResultSet) {
         die("Error en la consulta: " . mysqli_error($conexion));

@@ -26,9 +26,9 @@ try {
     // 'Conectar()', 'Ejecutar()', 'Desconectar()' coinciden con la capitalización real.
     // Tu código anterior usaba 'controlador.php' y 'conectar()', 'ejecutar()', 'Desconectar()'.
     // He ajustado este a la capitalización de tu código original: 'Controlador.php', 'Conectar()', 'Ejecutar()'.
-    include("controlador.php");
+    include("Controlador.php");
 
-    $Conexion = conectar();
+    $Conexion = Conectar();
 
     // Comprobar si la conexión fue exitosa
     if (!$Conexion) {

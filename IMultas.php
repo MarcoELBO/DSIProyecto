@@ -27,8 +27,8 @@ try {
     $SQL = "INSERT INTO multas (Folio, Fecha, Hora, Motivo, Licencia, T_Verificacion, T_Circulacion, Policia, Observaciones, Lugar) VALUES ('$Folio', '$Fecha', '$Hora', '$Motivo', '$Licencia', '$T_Verificacion', '$T_Circulacion', '$Policia', '$observaciones', '$Lugar')";
 
     // Incluir el controlador de la base de datos y establecer la conexión
-    include("controlador.php");
-    $Conexion = conectar();
+    include("Controlador.php");
+    $Conexion = Conectar();
 
     // Comprobar si la conexión fue exitosa
     if (!$Conexion) {
@@ -37,7 +37,7 @@ try {
 
     // Ejecutar la instrucción SQL
     // Asumo que la función ejecutar() devuelve 1 para éxito y 0/false para fallo.
-    $ResultSet = ejecutar($Conexion, $SQL);
+    $ResultSet = Ejecutar($Conexion, $SQL);
 
     // Desconectar la base de datos
     Desconectar($Conexion);

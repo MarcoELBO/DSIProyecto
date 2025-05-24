@@ -49,9 +49,9 @@ try {
     // Incluir el controlador de la base de datos y establecer la conexión
     // Asegúrate de que el nombre del archivo 'Controlador.php' y las funciones
     // 'Conectar()', 'Ejecutar()', 'Desconectar()' coinciden con la capitalización real.
-    include("controlador.php");
+    include("Controlador.php");
 
-    $Conexion = conectar();
+    $Conexion = Conectar();
 
     // Comprobar si la conexión fue exitosa
     if (!$Conexion) {

@@ -1,10 +1,10 @@
 <?php
 require('fpdf.php');
-include("controlador.php");
+include("Controlador.php");
 
-$Con = conectar();
+$Con = Conectar();
 $SQL = "SELECT * FROM multas1;";
-$ResultSet = ejecutar($Con, $SQL);
+$ResultSet = Ejecutar($Con, $SQL);
 $Datos = mysqli_fetch_array($ResultSet);
 
 $pdf = new FPDF('P', 'mm', array(180, 250));

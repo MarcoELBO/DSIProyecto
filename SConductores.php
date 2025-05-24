@@ -21,15 +21,15 @@
 
     $SQL = "SELECT * FROM conductores WHERE $atributo LIKE '%$criterio%';"; // Agregué '%' para búsqueda parcial
 
-    include("controlador.php");
+    include("Controlador.php");
 
-    $conexion = conectar();
+    $conexion = Conectar();
 
     if (!$conexion) {
         die("Error al conectar a la base de datos.");
     }
 
-    $ResultSet = ejecutar($conexion, $SQL);
+    $ResultSet = Ejecutar($conexion, $SQL);
 
     if (!$ResultSet) {
         die("Error en la consulta: " . mysqli_error($conexion));

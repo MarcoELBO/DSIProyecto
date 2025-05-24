@@ -24,14 +24,14 @@
     $sql = "SELECT * FROM propietarios WHERE $atributo LIKE '$criterio';";
 
     // Crear conexion
-    include("controlador.php");
-    $conexion = conectar();
+    include("Controlador.php");
+    $conexion = Conectar();
 
     if (!$conexion) {
         die("Error al conectar a la base de datos.");
     }
 
-    $ResultSet = ejecutar($conexion, $sql);
+    $ResultSet = Ejecutar($conexion, $sql);
 
     if (!$ResultSet) {
         die("Error en la consulta: " . mysqli_error($conexion));

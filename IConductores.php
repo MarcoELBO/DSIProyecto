@@ -37,13 +37,13 @@ try {
     )";
 
     // Incluir el controlador de la base de datos y establecer la conexión
-    include("controlador.php");
-    $Conexion = conectar();
+    include("Controlador.php");
+    $Conexion = Conectar();
 
     // Ejecutar la instrucción SQL
     // Si la función ejecutar() devuelve 1 para éxito y 0/false para fallo,
     // tu lógica original de if ($ResultSet == 1) funcionará.
-    $ResultSet = ejecutar($Conexion, $SQL);
+    $ResultSet = Ejecutar($Conexion, $SQL);
 
     // Desconectar la base de datos
     Desconectar($Conexion);

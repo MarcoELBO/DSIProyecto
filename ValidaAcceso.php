@@ -4,7 +4,7 @@ $Password = $_POST['Password'];
 
 $SQL = "SELECT * FROM Usuario WHERE Username = '$Username';";
 
-include("controlador.php");
+include("Controlador.php");
 
 $Conexion = Conectar();
 $ResultSet = Ejecutar($Conexion, $SQL);

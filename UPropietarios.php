@@ -8,9 +8,9 @@ $Fecha_nacimiento = $_REQUEST['Fecha_nacimiento'];
 $SQL = "UPDATE Propietarios SET RFC='$RFC', Nombre ='$Nombre', Fecha_nacimiento = '$Fecha_nacimiento' WHERE ID_Propietario = '$ID_Propietario';";
 
 include("Controlador.php");
-$conexion = conectar();
-$ResultSet = ejecutar($conexion, $SQL);
-$Exit = desconectar($conexion);
+$conexion = Conectar();
+$ResultSet = Ejecutar($conexion, $SQL);
+$Exit = Desconectar($conexion);
 $pep = mysqli_num_rows($ResultSet);
 if ($pep == 1) {
     print ("Se actualizo el propietario con exito");

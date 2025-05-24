@@ -1,7 +1,7 @@
 <?php
 
-include("controlador.php");
-$Con = conectar();
+include("Controlador.php");
+$Con = Conectar();
 $SQL = "SELECT * FROM licenciaconducir";
 $ResultSet = Ejecutar($Con, $SQL);
 $Fila = mysqli_fetch_array($ResultSet);
