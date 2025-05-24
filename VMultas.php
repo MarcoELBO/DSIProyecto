@@ -4,7 +4,7 @@ require('fpdf.php');
 include("controlador.php");
 
 $Con = conectar();
-$SQL = "SELECT * FROM Multas1;";
+$SQL = "SELECT * FROM Multass;";
 $ResultSet = ejecutar($Con, $SQL);
 $Datos = mysqli_fetch_array($ResultSet);
 
