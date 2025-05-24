@@ -1,5 +1,4 @@
 <?php
-$ID_Pago = $_POST['ID_Pago'];
 $Servicio = $_POST['Servicio'];
 $Monto = $_POST['Monto'];
 $Fecha = $_POST['Fecha'];
@@ -15,13 +14,13 @@ print ("Hora = " . $Hora . "<br>");
 print ("Tarjeta asociada = " . $Tarjeta_Asociada . "<br>");
 */
 
-$SQL = "INSERT INTO Pagos (ID_Pago, Servicio, Monto, Fecha, Hora, Tarjeta_Asociada) VALUES ('$ID_Pago', '$Servicio', '$Monto', '$Fecha', '$Hora', '$Tarjeta_Asociada')";
+$SQL = "INSERT INTO pagos VALUES (NULL,'$Servicio', '$Monto', '$Fecha', '$Hora', '$Tarjeta_Asociada')";
 
-include("Controlador.php");
+include("controlador.php");
 
-$Conexion = Conectar();
+$Conexion = conectar();
 
-$ResultSet = Ejecutar($Conexion, $SQL);
+$ResultSet = ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 
