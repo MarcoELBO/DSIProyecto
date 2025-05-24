@@ -1,11 +1,12 @@
 <?php
 require('fpdf.php');
-include("controlador.php");
+include("Controlador.php");
 
-$Con = conectar();
-$SQL = "SELECT * FROM Verificacion;";
-$ResultSet = ejecutar($Con, $SQL);
+$Con = Conectar();
+$SQL = "SELECT * FROM verificacion;";
+$ResultSet = Ejecutar($Con, $SQL);
 $DATOS = mysqli_fetch_array($ResultSet);
+Desconectar($Con);
 
 // Crear documento PDF tamaño carta (215.9 x 279.4 mm)
 $pdf = new FPDF('L', 'mm', array(210, 110));

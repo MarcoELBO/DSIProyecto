@@ -2,7 +2,7 @@
 
 include("Controlador.php");
 $Con = Conectar();
-$SQL = "SELECT * FROM CirculacionVehiculo";
+$SQL = "SELECT * FROM circulacionvehiculo";
 $ResultSet = Ejecutar($Con, $SQL);
 $Fila = mysqli_fetch_array($ResultSet);
 $Cerrar = Desconectar($Con);

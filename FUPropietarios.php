@@ -6,11 +6,11 @@
     <input type="number" name="ID_Propietario" id="ID_Propietario">
     <?php
     include("Controlador.php");
-    $conexion = conectar();
+    $conexion = Conectar();
     $ID_Propietario = $_REQUEST["ID_Propietario"];
-    $ResultSet = ejecutar($conexion, "SELECT * FROM Propietarios WHERE ID_Propietario = '$ID_Propietario';");
+    $ResultSet = Ejecutar($conexion, "SELECT * FROM Propietarios WHERE ID_Propietario = '$ID_Propietario';");
     $row = mysqli_fetch_row($ResultSet);
-    $Cerrar = desconectar($conexion);
+    $Cerrar = Desconectar($conexion);
     ?>
     <br>
     <label>RFC</label>

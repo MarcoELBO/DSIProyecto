@@ -12,12 +12,8 @@
             <h1 class="form-card__title">Registro de Propietarios</h1>
             <form method="POST" action="IPropietarios.php" class="form">
                 <div class="form__group">
-                    <label for="ID_Propietario" class="form__label">ID Propietario:</label>
-                    <input type="number" name="ID_Propietario" id="ID_Propietario" required class="form__input">
-                </div>
-                <div class="form__group">
                     <label for="RFC" class="form__label">RFC:</label>
-                    <input type="text" name="RFC" id="RFC" required class="form__input">
+                    <input type="text" name="RFC" id="RFC" required class="form__input" maxlength="13">
                 </div>
                 <div class="form__group">
                     <label for="Nombre" class="form__label">Nombre:</label>
@@ -33,5 +29,6 @@
             </form>
         </section>
     </main>
+    <script src="./js/manejadorExcepciones.js"></script>
 </body>
 </html>

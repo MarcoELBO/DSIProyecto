@@ -2,7 +2,7 @@
 
 include("Controlador.php");
 $Con = Conectar();
-$SQL = "SELECT * FROM LicenciaConducir";
+$SQL = "SELECT * FROM licenciaconducir";
 $ResultSet = Ejecutar($Con, $SQL);
 $Fila = mysqli_fetch_array($ResultSet);
 $Cerrar = Desconectar($Con);
@@ -89,8 +89,8 @@ $pdf->Image('Imagenes/Queretaro.png', 24, 38.5, 4, 4);
 
 //PAGINA 2
 //PARTE 1
-$Con = Conectar();
-$SQL = "SELECT * FROM ConductorDomicilio";
+$Con = conectar();
+$SQL = "SELECT * FROM conductordomicilio";
 $ResultSet = Ejecutar($Con, $SQL);
 $Fila = mysqli_fetch_array($ResultSet);
 $Cerrar = Desconectar($Con);

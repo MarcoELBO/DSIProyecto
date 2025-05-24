@@ -12,10 +12,6 @@
             <h1 class="form-card__title">Registro de Pagos</h1>
             <form method="post" action="IPagos.php" class="form">
                 <div class="form__group">
-                    <label for="ID_Pago" class="form__label">ID Pago:</label>
-                    <input type="number" id="ID_Pago" name="ID_Pago" required class="form__input">
-                </div>
-                <div class="form__group">
                     <label for="Servicio" class="form__label">Servicio:</label>
                     <input type="text" id="Servicio" name="Servicio" required class="form__input">
                 </div>
@@ -32,7 +28,7 @@
                     <input type="time" id="Hora" name="Hora" required class="form__input">
                 </div>
                 <div class="form__group">
-                    <label for="Tarjeta_Asociada" class="form__label">Tarjeta Asociada (ID):</label>
+                    <label for="Tarjeta_Asociada" class="form__label">Tarjeta T_Circulacion (ID):</label>
                     <input type="number" id="Tarjeta_Asociada" name="Tarjeta_Asociada" required class="form__input">
                 </div>
                 <div class="form__group form__group--actions">
@@ -41,5 +37,6 @@
             </form>
         </section>
     </main>
+    <script src="./js/manejadorExcepciones.js"></script>
 </body>
 </html>

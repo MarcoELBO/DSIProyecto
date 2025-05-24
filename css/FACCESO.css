@@ -414,3 +414,96 @@ body {
         transition: max-height 0.4s ease-in;
     }
 }
+
+/* --- Secciones para Tarjetas de Datos / Tablas de Resultados --- */
+
+/* Contenedor principal para la tarjeta de datos */
+.data-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    padding: var(--spacing-lg); /* Padding interior */
+    margin-bottom: var(--spacing-lg); /* Margen inferior para separar de otros elementos */
+}
+
+/* Título de la tarjeta de datos */
+.data-card__title {
+    font-size: 2rem; /* Tamaño del título */
+    color: var(--dark-text);
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* Mensaje si no hay resultados */
+.data-card__empty-message {
+    text-align: center;
+    color: var(--secondary-color);
+    font-style: italic;
+    padding: var(--spacing-md);
+}
+
+/* Contenedor para tablas con scroll horizontal en pantallas pequeñas */
+.table-responsive {
+    overflow-x: auto; /* Permite scroll horizontal si la tabla es más ancha que el contenedor */
+    width: 100%;
+}
+
+/* Estilos base para la tabla de datos */
+.data-table {
+    width: 100%; /* La tabla ocupa todo el ancho disponible */
+    border-collapse: collapse; /* Elimina el espacio entre bordes de celdas */
+    margin-top: var(--spacing-md);
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño */
+    line-height: 1.5;
+}
+
+/* Estilos para los encabezados de la tabla (<th>) */
+.data-table__header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border: 1px solid var(--primary-color-dark); /* Borde oscuro para encabezados */
+    white-space: nowrap; /* Evita que el texto del encabezado se rompa */
+}
+
+/* Estilos para las filas de la tabla (<tr>) */
+.data-table__row {
+    border-bottom: 1px solid var(--border-color); /* Borde inferior para separar filas */
+}
+
+.data-table__row:nth-child(even) {
+    background-color: var(--light-bg); /* Color de fondo para filas pares (cebreado) */
+}
+
+.data-table__row:hover {
+    background-color: #e9ecef; /* Color de fondo al pasar el ratón por la fila */
+    cursor: pointer;
+}
+
+/* Estilos para las celdas de la tabla (<td>) */
+.data-table__cell {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--border-color); /* Bordes de las celdas */
+    color: var(--dark-text);
+}
+
+/* Ajustes para la primera celda/columna si es un ID o algo principal */
+/* .data-table__cell:first-child {
+    font-weight: bold;
+} */
+
+/* Opcional: Estilo para la última celda si contiene acciones (botones, enlaces) */
+/* .data-table__cell--actions {
+    text-align: center;
+    white-space: nowrap;
+} */
+
+/* Si tienes botones pequeños dentro de las celdas, puedes definirlos */
+/* .data-table__cell .button-small {
+    padding: 5px 10px;
+    font-size: 0.8em;
+} */

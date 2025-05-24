@@ -12,16 +12,12 @@
             <h1 class="form-card__title">Registro de Domicilios</h1>
             <form method="post" action="IDomicilios.php" class="form">
                 <div class="form__group">
-                    <label for="ID_DOMICILIO" class="form__label">ID Domicilio:</label>
-                    <input type="number" name="ID_DOMICILIO" id="ID_DOMICILIO" required class="form__input">
-                </div>
-                <div class="form__group">
                     <label for="CALLE" class="form__label">Calle:</label>
                     <input type="text" name="CALLE" id="CALLE" required class="form__input">
                 </div>
                 <div class="form__group">
                     <label for="CP" class="form__label">Código Postal:</label>
-                    <input type="number" name="CP" id="CP" required class="form__input">
+                    <input type="number" name="CP" id="CP" required class="form__input" maxlength="5">
                 </div>
                 <div class="form__group">
                     <label for="COLONIA" class="form__label">Colonia:</label>

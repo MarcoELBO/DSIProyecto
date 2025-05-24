@@ -1,44 +1,67 @@
 <?php
-$NO_CENTRO = $_POST['NO_CENTRO'];
-$NO_LINEA = $_POST['NO_LINEA'];
-$VERIFICACION = $_POST['VERIFICACION'];
-$NOMBRE = $_POST['NOMBRE'];
-$DOMICILIO = $_POST['DOMICILIO'];
-$TIPO_CENTRO = $_POST['TIPO_CENTRO'];
+// Iniciar el buffering de salida para asegurar que los encabezados HTTP se envíen correctamente
+ob_start();
 
-/*
-print ("No Centro = " . $NO_CENTRO . "<br>");
-print ("No Linea = " . $NO_LINEA . "<br>");
-print ("VERIFICACION = " . $VERIFICACION . "<br>");
-print ("NOMBRE = " . $NOMBRE . "<br>");
-print ("DOMICILIO = " . $DOMICILIO . "<br>");
-print ("Tipo de centro = " . $TIPO_CENTRO . "<br>");
+// Establecer el tipo de contenido de la respuesta a JSON.
+// Esto es CRÍTICO para que JavaScript interprete la respuesta correctamente.
+header('Content-Type: application/json');
 
+try {
+    // Obteniendo los valores del front end
+    $NO_LINEA = $_POST['NO_LINEA'];
+    $VERIFICACION = $_POST['VERIFICACION'];
+    $NOMBRE = $_POST['NOMBRE'];
+    $DOMICILIO = $_POST['DOMICILIO'];
+    $TIPO_CENTRO = $_POST['TIPO_CENTRO'];
 
+    // Crear la instrucción SQL para un INSERT explícito.
+    // NOTA: Esta construcción de la consulta es VULNERABLE a inyección SQL.
+    // Para proyectos de producción, se recomienda encarecidamente usar sentencias preparadas.
+    // Se mantiene 'NULL' para NO_CENTRO si es una columna AUTO_INCREMENT y no necesitas enviarle un valor.
+    $SQL = "INSERT INTO centros_verificacion(NO_CENTRO, NO_LINEA, VERIFICACION, NOMBRE, DOMICILIO, TIPO_CENTRO) VALUES (NULL, '$NO_LINEA', '$VERIFICACION', '$NOMBRE', '$DOMICILIO', '$TIPO_CENTRO')";
 
+    // Incluir el controlador de la base de datos y establecer la conexión
+    include("Controlador.php");
+    $Conexion = Conectar();
 
-$Server = "127.0.0.1";
-$User = "root";
-$Pws = "";
-$BD = "controlvehicular31";
+    // Comprobar si la conexión fue exitosa
+    if (!$Conexion) {
+        throw new Exception("Error al conectar a la base de datos.");
+    }
 
-$Con = mysqli_connect($Server, $User, $Pws, $BD);
-*/
+    // Ejecutar la instrucción SQL
+    // Asumo que la función ejecutar() devuelve 1 para éxito y 0/false para fallo.
+    $ResultSet = Ejecutar($Conexion, $SQL);
 
-$SQL = "INSERT INTO CENTROS_VERIFICACION(NO_CENTRO, NO_LINEA, VERIFICACION, NOMBRE, DOMICILIO, TIPO_CENTRO) VALUES ('$NO_CENTRO', '$NO_LINEA', '$VERIFICACION', '$NOMBRE', '$DOMICILIO', '$TIPO_CENTRO')";
+    // Desconectar la base de datos
+    Desconectar($Conexion);
 
-include("Controlador.php");
+    // Procesa el resultado de la operación
+    if ($ResultSet == 1) {
+        // Operación exitosa: Envía código 200 OK
+        http_response_code(200);
+        echo json_encode(['status' => 'success', 'message' => 'Registro guardado correctamente.']);
+    } else {
+        // Operación fallida por alguna razón
+        // Incluye el mensaje de error de MySQL si está disponible para depuración
+        $errorMessage = "Error al guardar el registro";
+        if ($Conexion->error) {
+            $errorMessage .= ": " . $Conexion->error;
+        }
+        http_response_code(400); // 400 Bad Request para indicar un problema con los datos o la operación
+        echo json_encode(['status' => 'error', 'message' => $errorMessage]);
+    }
 
-$Conexion = Conectar();
+} catch (Exception $e) {
+    // Captura cualquier excepción que pueda ocurrir (ej. error en la conexión, error de PHP, etc.)
+    http_response_code(500); // 500 Internal Server Error para problemas del servidor
+    echo json_encode(['status' => 'error', 'message' => 'Fallo en el servidor: ' . $e->getMessage()]);
 
-$ResultSet = Ejecutar($Conexion, $SQL);
-
-$Desconectar = Desconectar($Conexion);
-
-if ($ResultSet == 1) {
-    print ("Registro guardado");
-} else {
-    print ("Error al guardar el registro" . $Conexion->error);
+    // Opcional: Loggear el error para depuración en el servidor
+    // error_log("Error en ICentrosVerificacion.php: " . $e->getMessage() . " en línea " . $e->getLine());
 }
 
+// Finaliza el buffering de salida y envía la respuesta al cliente
+ob_end_flush();
+exit;
 ?>

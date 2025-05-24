@@ -43,7 +43,7 @@ $pdf->Cell(0, 8, 'Hora: ' . $Fila[9], 0, 1);
 
 $pdf->Ln(5);
 $pdf->SetFont('Arial', 'I', 9);
-$pdf->MultiCell(0, 6, utf8_decode('Nota: El nombre y/o razón social que saldrá en el recibo de pago y/o CFDI será el registrado en el padrón vehicular, el cual una vez pagado no podrá ser modificado.'));
+$pdf->MultiCell(0, 6, 'Nota: El nombre y/o razón social que saldrá en el recibo de pago y/o CFDI será el registrado en el padrón vehicular, el cual una vez pagado no podrá ser modificado.');
 
 $pdf->Ln(5);
 $pdf->SetFont('Arial', 'B', 10);
