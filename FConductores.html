@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conductores</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
 </head>
-
 <body>
-    <label>Conductores</label>
-    <form method="post" action="IConductores.php">
-        <label>CURP</label>
-        <input type="text" name="CURP" id="CURP" required="required">
-        <label>Nombre</label>
-        <input type="text" name="Nombre" id="Nombre" required="required">
-        <label>Domicilio</label>
-        <input type="number" name="Domicilio" id="Domicilio" required="required">
-        <label>FolioTC</label>
-        <input type="number" name="FolioTC" id="FolioTC" required="required">
-        <label>NoLicencia</label>
-        <input type="number" name="NoLicencia" id="NoLicencia" required="required">
-        <input type="submit">
-    </form>
-
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Conductores</h1>
+            <form method="post" action="IConductores.php" class="form">
+                <div class="form__group">
+                    <label for="CURP" class="form__label">CURP:</label>
+                    <input type="text" name="CURP" id="CURP" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Nombre" class="form__label">Nombre:</label>
+                    <input type="text" name="Nombre" id="Nombre" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Domicilio" class="form__label">Domicilio:</label>
+                    <input type="text" name="Domicilio" id="Domicilio" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="FolioTC" class="form__label">Folio TC:</label>
+                    <input type="number" name="FolioTC" id="FolioTC" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="NoLicencia" class="form__label">No. Licencia:</label>
+                    <input type="number" name="NoLicencia" id="NoLicencia" required class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Guardar" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
-
 </html>

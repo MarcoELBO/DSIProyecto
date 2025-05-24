@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Tarjetas de Circulación</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
 </head>
-
 <body>
-    <label>Tarjetas de Circulacion</label><br>
-    <form method="post" action="ITarjetasCirculacion.php">
-        <label>ID Tarjetas de Circulacion</label>
-        <Input type="number" name="ID_TC" id="ID_TC" required="required"><br>
-        <label>Vehiculo</label>
-        <Input type="text" name="Vehiculo" id="Vehiculo" required="required"><br>
-        <label>Propietario</label>
-        <Input type="int" name="Propietario" id="Propietario" required="required"><br>
-        <label>Tipo de servicio</label>
-        <Input type="text" name="Tipo_Servicio" id="Tipo_Servicio" required="required"><br>
-        <label>Domicilio</label>
-        <Input type="int" name="Domicilio" id="Domicilio" required="required"><br>
-        <Input type="submit">
-    </form>
-
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Registro de Tarjetas de Circulación</h1>
+            <form method="post" action="ITarjetasCirculacion.php" class="form">
+                <div class="form__group">
+                    <label for="ID_TC" class="form__label">ID Tarjeta de Circulación:</label>
+                    <input type="number" name="ID_TC" id="ID_TC" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Vehiculo" class="form__label">Vehículo (Placa):</label>
+                    <input type="text" name="Vehiculo" id="Vehiculo" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Propietario" class="form__label">Propietario (ID):</label>
+                    <input type="number" name="Propietario" id="Propietario" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Tipo_Servicio" class="form__label">Tipo de Servicio:</label>
+                    <input type="text" name="Tipo_Servicio" id="Tipo_Servicio" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Domicilio" class="form__label">Domicilio (ID):</label>
+                    <input type="number" name="Domicilio" id="Domicilio" required class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Registrar Tarjeta" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
-
 </html>
