@@ -2,10 +2,10 @@
 
 function Conectar()
 {
-    $Server = "localhost";
-    $User = "root";
-    $Password = "";
-    $BD = "controlvehicular31";
+    $Server = "34.51.16.71";
+    $User = "pp";
+    $Password = "doraemon";
+    $BD = "gestion";
 
     $Conexion = mysqli_connect($Server, $User, $Password, $BD);
     return $Conexion;

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Oficiales</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
 </head>
-
 <body>
-    <label>Oficiales</label><br>
-    <form method="get" action="IOficiales.php">
-        <label>ID_Oficial</label>
-        <input type="number" name="IdOficial" id="IdOficial" required="required"><br>
-        <label>Nombre</label>
-        <input type="text" name="Nombre" id="Nombre" required="required"><br>
-        <label>Cargo</label>
-        <input type="text" name="Cargo" id="Cargo" required="required"><br>
-        <Input type="submit">
-    </form>
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Registro de Oficiales</h1>
+            <form method="POST" action="IOficiales.php" class="form">
+                <div class="form__group">
+                    <label for="IdOficial" class="form__label">ID Oficial:</label>
+                    <input type="number" name="IdOficial" id="IdOficial" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Nombre" class="form__label">Nombre:</label>
+                    <input type="text" name="Nombre" id="Nombre" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Cargo" class="form__label">Cargo:</label>
+                    <input type="text" name="Cargo" id="Cargo" required class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Registrar Oficial" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
-
 </html>

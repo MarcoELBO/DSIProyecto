@@ -1,0 +1,218 @@
+/* Base */
+:root {
+    --color-primary: #3498db; /* Un azul agradable */
+    --color-primary-dark: #2980b9;
+    --color-text: #333;
+    --color-background: #f4f7f6;
+    --color-white: #fff;
+    --color-border: #e0e0e0;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius-base: 8px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Page Wrapper - BEM Block */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-sm);
+    box-sizing: border-box;
+}
+
+/* Form Card - BEM Block */
+.form-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-md);
+    width: 100%;
+    max-width: 450px; /* Un poco más ancho si tiene muchos campos */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.form-card__title {
+    font-size: 1.8em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+/* Form - BEM Block */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+/* Form Group - BEM Element */
+.form__group {
+    margin-bottom: var(--spacing-xs);
+    text-align: left;
+}
+
+/* Form Label - BEM Element */
+.form__label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--color-text);
+    font-size: 0.95em;
+}
+
+/* Form Input - BEM Element */
+.form__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    box-sizing: border-box;
+    font-size: 1em;
+    color: var(--color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Form Group Actions - BEM Modifier */
+.form__group--actions {
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+/* Form Button - BEM Element */
+.form__button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.form__button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+.form__button:active {
+    transform: translateY(0);
+}
+
+/* Form Group Modifier - Radio */
+.form__group--radio {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    text-align: left; /* Alinea los labels de radio a la izquierda */
+}
+
+/* Form Label Modifier - Inline (for radio/checkbox groups) */
+.form__label--inline {
+    display: inline-block; /* Ocupa el espacio necesario, no toda la línea */
+    margin-bottom: var(--spacing-xs); /* Espacio antes del grupo de radios */
+}
+
+/* Form Radio Group Container */
+.form__radio-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los radios salten de línea si no caben */
+    gap: var(--spacing-sm); /* Espacio entre los radios */
+    margin-top: var(--spacing-xs);
+}
+
+/* Form Radio Input */
+.form__radio-input {
+    /* Ocultar el radio nativo para estilos personalizados */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Form Radio Label (para el estilo personalizado) */
+.form__radio-label {
+    display: inline-flex; /* Alinea el icono y el texto */
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: var(--color-text);
+    position: relative;
+    padding-left: 25px; /* Espacio para el icono de radio */
+    user-select: none; /* Evita selección de texto */
+}
+
+.form__radio-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-border);
+    border-radius: 50%; /* Para forma de círculo */
+    background-color: var(--color-white);
+    transition: all 0.2s ease;
+}
+
+.form__radio-label::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transition: all 0.2s ease;
+}
+
+.form__radio-input:checked + .form__radio-label::before {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+}
+
+.form__radio-input:checked + .form__radio-label::after {
+    transform: translateY(-50%) scale(1);
+}
+
+.form__radio-input:focus + .form__radio-label::before {
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Brillo al enfocar */
+}
+
+/* Ajuste para el botón de búsqueda si quieres un color primario normal */
+.form__button--primary {
+    background-color: var(--color-primary);
+}
+
+.form__button--primary:hover {
+    background-color: var(--color-primary-dark);
+}

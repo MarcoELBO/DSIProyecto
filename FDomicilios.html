@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Domicilios</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
 </head>
-
 <body>
-    <label>Domicilios</label>
-    <form method="get" action="IDomicilios.php">
-        <label>ID_DOMICILIO</label>
-        <Input type="number" name="ID_DOMICILIO" id="ID_DOMICILIO" required="required">
-        <label>CALLE</label>
-        <Input type="text" name="CALLE" id="CALLE" required="required">
-        <label>Codigo Postal</label>
-        <Input type="number" name="CP" id="CP" required="required">
-        <label>Colonia</label>
-        <Input type="text" name="COLONIA" id="COLONIA" required="required">
-        <label>NumInterno</label>
-        <Input type="text" name="NUM_INT" id="NUM_INT">
-        <label>NumExterno</label>
-        <Input type="text" name="NUM_EXT" id="NUM_EXT">
-        <label>Estado</label>
-        <Input type="text" name="ESTADO" id="ESTADO" required="required">
-        <label>Municipio</label>
-        <Input type="text" name="MUNICIPIO" id="MUNICIPIO" required="required">
-        <label>Referencias</label>
-        <Input type="text" name="REFERENCIAS" id="REFERENCIAS">
-        <Input type="submit">
-    </form>
-
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Registro de Domicilios</h1>
+            <form method="post" action="IDomicilios.php" class="form">
+                <div class="form__group">
+                    <label for="ID_DOMICILIO" class="form__label">ID Domicilio:</label>
+                    <input type="number" name="ID_DOMICILIO" id="ID_DOMICILIO" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="CALLE" class="form__label">Calle:</label>
+                    <input type="text" name="CALLE" id="CALLE" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="CP" class="form__label">Código Postal:</label>
+                    <input type="number" name="CP" id="CP" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="COLONIA" class="form__label">Colonia:</label>
+                    <input type="text" name="COLONIA" id="COLONIA" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="NUM_INT" class="form__label">Número Interno:</label>
+                    <input type="text" name="NUM_INT" id="NUM_INT" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="NUM_EXT" class="form__label">Número Externo:</label>
+                    <input type="text" name="NUM_EXT" id="NUM_EXT" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="ESTADO" class="form__label">Estado:</label>
+                    <input type="text" name="ESTADO" id="ESTADO" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="MUNICIPIO" class="form__label">Municipio:</label>
+                    <input type="text" name="MUNICIPIO" id="MUNICIPIO" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="REFERENCIAS" class="form__label">Referencias:</label>
+                    <input type="text" name="REFERENCIAS" id="REFERENCIAS" class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Guardar Domicilio" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
-
 </html>

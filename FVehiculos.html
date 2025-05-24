@@ -1,33 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Vehículos</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
 </head>
-
 <body>
-    <label>Vehiculos</label>
-    <form method="get" action="IVehiculos.php">
-        <label>Placa</label>
-        <Input type="text" name="Placa" id="Placa" required="required"><br>
-        <label>Marca</label>
-        <Input type="text" name="Marca" id="Marca" required="required"><br>
-        <label>Color</label>
-        <Input type="text" name="Color" id="Color" required="required"><br>
-        <label>Modelo</label>
-        <Input type="text" name="Modelo" id="Modelo" required="required"><br>
-        <label>Puertas</label>
-        <Input type="number" name="Puertas" id="Puertas" required="required"><br>
-        <label>Asientos</label>
-        <Input type="number" name="Asientos" id="Asientos" required="required"><br>
-        <label>Cilindraje</label>
-        <Input type="number" name="Cilindraje" id="Cilindraje"><br>
-        <label>Combustible</label>
-        <Input type="number" name="Combustible" id="Combustible"><br>
-        <Input type="submit">
-    </form>
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Registro de Vehículos</h1>
+            <form method="post" action="IVehiculos.php" class="form">
+                <div class="form__group">
+                    <label for="Placa" class="form__label">Placa:</label>
+                    <input type="text" name="Placa" id="Placa" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Marca" class="form__label">Marca:</label>
+                    <input type="text" name="Marca" id="Marca" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Color" class="form__label">Color:</label>
+                    <input type="text" name="Color" id="Color" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Modelo" class="form__label">Modelo:</label>
+                    <input type="text" name="Modelo" id="Modelo" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Puertas" class="form__label">Número de Puertas:</label>
+                    <input type="number" name="Puertas" id="Puertas" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Asientos" class="form__label">Número de Asientos:</label>
+                    <input type="number" name="Asientos" id="Asientos" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Cilindraje" class="form__label">Cilindraje:</label>
+                    <input type="number" name="Cilindraje" id="Cilindraje" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Combustible" class="form__label">Combustible (ID):</label>
+                    <input type="number" name="Combustible" id="Combustible" class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Registrar Vehículo" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
 </body>
-
 </html>
