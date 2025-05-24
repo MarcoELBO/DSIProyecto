@@ -1,33 +1,69 @@
 <?php
-$Servicio = $_POST['Servicio'];
-$Monto = $_POST['Monto'];
-$Fecha = $_POST['Fecha'];
-$Hora = $_POST['Hora'];
-$Tarjeta_Asociada = $_POST['Tarjeta_Asociada'];
+// Iniciar el buffering de salida para asegurar que los encabezados HTTP se envíen correctamente
+ob_start();
 
-/*
-print ("ID_Pago = " . $ID_Pago . "<br>");
-print ("Servicio = " . $Servicio . "<br>");
-print ("Monto = " . $Monto . "<br>");
-print ("Fecha = " . $Fecha . "<br>");
-print ("Hora = " . $Hora . "<br>");
-print ("Tarjeta asociada = " . $Tarjeta_Asociada . "<br>");
-*/
+// Establecer el tipo de contenido de la respuesta a JSON.
+// Esto es CRÍTICO para que JavaScript interprete la respuesta correctamente.
+header('Content-Type: application/json');
 
-$SQL = "INSERT INTO pagos VALUES (NULL,'$Servicio', '$Monto', '$Fecha', '$Hora', '$Tarjeta_Asociada')";
+try {
+    // Obteniendo los valores del front end
+    // Usando $_POST como en tu original
+    $Servicio = $_POST['Servicio'];
+    $Monto = $_POST['Monto'];
+    $Fecha = $_POST['Fecha'];
+    $Hora = $_POST['Hora'];
+    $Tarjeta_Asociada = $_POST['Tarjeta_Asociada'];
 
-include("controlador.php");
+    // Crear la instrucción SQL para un INSERT implícito.
+    // Los valores deben estar en el mismo orden que las columnas en la tabla 'pagos'.
+    // NOTA: Esta construcción de la consulta es VULNERABLE a inyección SQL.
+    // Para proyectos de producción, se recomienda encarecidamente usar sentencias preparadas.
+    // Se mantiene 'NULL' para la primera columna (asumo que es un ID AUTO_INCREMENT).
+    $SQL = "INSERT INTO pagos VALUES (NULL,'$Servicio', '$Monto', '$Fecha', '$Hora', '$Tarjeta_Asociada')";
 
-$Conexion = conectar();
+    // Incluir el controlador de la base de datos y establecer la conexión
+    include("controlador.php");
+    $Conexion = conectar();
 
-$ResultSet = ejecutar($Conexion, $SQL);
+    // Comprobar si la conexión fue exitosa
+    if (!$Conexion) {
+        throw new Exception("Error al conectar a la base de datos.");
+    }
 
-$Desconectar = Desconectar($Conexion);
+    // Ejecutar la instrucción SQL
+    // Asumo que la función ejecutar() devuelve 1 para éxito y 0/false para fallo.
+    $ResultSet = ejecutar($Conexion, $SQL);
 
-if ($ResultSet == 1) {
-    print ("Registro guardado");
-} else {
-    print ("Error al guardar el registro" . $Conexion->error);
+    // Desconectar la base de datos
+    Desconectar($Conexion);
+
+    // Procesa el resultado de la operación
+    if ($ResultSet == 1) {
+        // Operación exitosa: Envía código 200 OK
+        http_response_code(200);
+        echo json_encode(['status' => 'success', 'message' => 'Registro de pago guardado correctamente.']);
+    } else {
+        // Operación fallida por alguna razón
+        // Incluye el mensaje de error de MySQL si está disponible para depuración
+        $errorMessage = "Error al guardar el registro del pago";
+        if ($Conexion->error) {
+            $errorMessage .= ": " . $Conexion->error;
+        }
+        http_response_code(400); // 400 Bad Request para indicar un problema con los datos o la operación
+        echo json_encode(['status' => 'error', 'message' => $errorMessage]);
+    }
+
+} catch (Exception $e) {
+    // Captura cualquier excepción que pueda ocurrir (ej. error en la conexión, error de PHP, etc.)
+    http_response_code(500); // 500 Internal Server Error para problemas del servidor
+    echo json_encode(['status' => 'error', 'message' => 'Fallo en el servidor al guardar el pago: ' . $e->getMessage()]);
+
+    // Opcional: Loggear el error para depuración en el servidor
+    // error_log("Error en IPagos.php: " . $e->getMessage() . " en línea " . $e->getLine());
 }
 
+// Finaliza el buffering de salida y envía la respuesta al cliente
+ob_end_flush();
+exit;
 ?>

@@ -12,10 +12,6 @@
             <h1 class="form-card__title">Registro de Tarjetas de Circulación</h1>
             <form method="post" action="ITarjetasCirculacion.php" class="form">
                 <div class="form__group">
-                    <label for="ID_TC" class="form__label">ID Tarjeta de Circulación:</label>
-                    <input type="number" name="ID_TC" id="ID_TC" required class="form__input">
-                </div>
-                <div class="form__group">
                     <label for="Vehiculo" class="form__label">Vehículo (Placa):</label>
                     <input type="text" name="Vehiculo" id="Vehiculo" required class="form__input">
                 </div>
@@ -31,11 +27,21 @@
                     <label for="Domicilio" class="form__label">Domicilio (ID):</label>
                     <input type="number" name="Domicilio" id="Domicilio" required class="form__input">
                 </div>
+                <div class="form__group">
+                    <label for="vigencia" class="form__label">Vigencia:</label>
+                    <input type="date" name="vigencia" id="vigencia" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="fecha_expedicion" class="form__label">Fecha de Expedición:</label>
+                    <input type="date" name="fecha_expedicion" id="fecha_expedicion" required class="form__input">
+                </div>
                 <div class="form__group form__group--actions">
                     <input type="submit" value="Registrar Tarjeta" class="form__button">
                 </div>
+                
             </form>
         </section>
     </main>
+    <script src="./js/manejadorExcepciones.js"></script>
 </body>
 </html>

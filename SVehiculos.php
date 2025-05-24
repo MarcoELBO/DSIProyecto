@@ -29,8 +29,7 @@
     // Construir la consulta SQL de forma segura
     // Usamos un placeholder (?) para el criterio. El nombre de la columna ($atributo) no puede ser un placeholder.
     // Por eso es CRÍTICO validar $atributo con la lista blanca.
-    $sql = "SELECT * FROM vehiculos WHERE $atributo LIKE '$criterio';";
-    echo $sql; // Para depuración, puedes comentar esta línea en producción
+    $sql = "SELECT * FROM vehiculos WHERE $atributo LIKE ?;";
     // Preparar la sentencia
     $stmt = mysqli_prepare($conexion, $sql);
 
@@ -38,7 +37,7 @@
         // Enlazar parámetros
         // 's' indica que el parámetro es un string
         // Agregamos '%' para que la búsqueda sea 'LIKE %criterio%' (contiene)
-        $criterio_busqueda = '%' . $criterio . '%';
+        $criterio_busqueda = $criterio;
         mysqli_stmt_bind_param($stmt, 's', $criterio_busqueda);
 
         // Ejecutar la sentencia preparada
@@ -97,7 +96,7 @@
                         </tbody>
                     </table>
                 </div>
-                <p class="data-card__footer-info">Registros Encontrados: **<?= $n; ?>**</p>
+                <p class="data-card__footer-info">Registros Encontrados: <b><?= $n; ?></b></p>
             <?php else: ?>
                 <p class="data-card__empty-message">No se encontraron oficiales con el criterio especificado o hubo un error en la búsqueda.</p>
             <?php endif; ?>
