@@ -26,6 +26,12 @@ try {
     // Se mantiene 'NULL' para la primera columna (asumo que es un ID AUTO_INCREMENT).
     $SQL = "INSERT INTO licencias VALUES (NULL, '$conductor', '$Fecha_expedicion', '$Fecha_validacion', '$antiguedad', '$observaciones', '$firma', '$Domicilio', '$fundamento_legal', '$foto')";
 
+include("controlador.php");
+
+$Conexion = conectar();
+
+$ResultSet = ejecutar($Conexion, $SQL);
+
     // Incluir el controlador de la base de datos y establecer la conexión
     include("controlador.php");
     $Conexion = conectar();

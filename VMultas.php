@@ -1,5 +1,4 @@
 <?php
-
 require('fpdf.php');
 include("controlador.php");
 
