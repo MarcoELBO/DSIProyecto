@@ -20,8 +20,8 @@
                     <input type="text" name="Nombre" id="Nombre" required class="form__input">
                 </div>
                 <div class="form__group">
-                    <label for="Domicilio" class="form__label">Domicilio:</label>
-                    <input type="text" name="Domicilio" id="Domicilio" required class="form__input">
+                    <label for="Domicilio" class="form__label">ID Domicilio:</label>
+                    <input type="number" name="Domicilio" id="Domicilio" required class="form__input">
                 </div>
                 <div class="form__group">
                     <label for="FolioTC" class="form__label">Folio TC:</label>
@@ -31,6 +31,27 @@
                     <label for="NoLicencia" class="form__label">No. Licencia:</label>
                     <input type="number" name="NoLicencia" id="NoLicencia" required class="form__input">
                 </div>
+                                <div class="form__group">
+                    <label for="FechaNacimiento" class="form__label">Fecha de Nacimiento:</label>
+                    <input type="date" name="FechaNacimiento" id="FechaNacimiento" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="TipoSangre" class="form__label">Tipo de Sangre:</label>
+                    <input type="text" name="TipoSangre" id="TipoSangre" maxlength="5" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="DonadorOrg" class="form__label">Donador de Órganos:</label>
+                    <select name="DonadorOrg" id="DonadorOrg" required class="form__input">
+                        <option value="">Seleccione</option>
+                        <option value="SI">Sí</option>
+                        <option value="NO">No</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="NumeroEmergencia" class="form__label">Número de Emergencia:</label>
+                    <input type="text" name="NumeroEmergencia" id="NumeroEmergencia" maxlength="17" required class="form__input">
+                </div>
+
                 <div class="form__group form__group--actions">
                     <input type="submit" value="Guardar" class="form__button">
                 </div>

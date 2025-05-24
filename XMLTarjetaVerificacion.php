@@ -1,8 +1,8 @@
 <?php
-include("Controlador.php");
-$Con = Conectar();
+include("controlador.php");
+$Con = conectar();
 $SQL = "SELECT * FROM verificacion";
-$ResultSet = Ejecutar($Con, $SQL);
+$ResultSet = ejecutar($Con, $SQL);
 $xml = new DOMDocument('1.0', 'UTF-8');
 $xml->formatOutput = true;
 

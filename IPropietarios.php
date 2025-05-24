@@ -1,23 +1,15 @@
 <?php
-$ID_Propietario = $_GET['ID_Propietario'];
-$RFC = $_GET['RFC'];
-$Nombre = $_GET['Nombre'];
-$Fecha_nacimiento = $_GET['Fecha_nacimiento'];
+$RFC = $_POST['RFC'];
+$Nombre = $_POST['Nombre'];
+$Fecha_nacimiento = $_POST['Fecha_nacimiento'];
 
-/*
-print ("ID Propietario = " . $ID_Propietario . "<br>");
-print ("RFC = " . $RFC . "<br>");
-print ("Nombre = " . $Nombre . "<br>");
-print ("Fecha de nacimiento = " . $Fecha_nacimiento . "<br>");
-*/
+$SQL = "INSERT INTO propietarios VALUES (NULL, '$RFC', '$Nombre', '$Fecha_nacimiento')";
 
-$SQL = "INSERT INTO propietarios VALUES ('$ID_Propietario', '$RFC', '$Nombre', '$Fecha_nacimiento')";
+include("controlador.php");
 
-include("Controlador.php");
+$Conexion = conectar();
 
-$Conexion = Conectar();
-
-$ResultSet = Ejecutar($Conexion, $SQL);
+$ResultSet = ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 

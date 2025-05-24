@@ -1,21 +1,15 @@
 <?php
-$IdOficial = $_REQUEST['IdOficial'];
 $Nombre = $_REQUEST['Nombre'];
 $Cargo = $_REQUEST['Cargo'];
 
-/*
-print("ID_Oficial = " .$IdOficial. "<br>");
-print("Nombre = " .$Nombre. "<br>");
-print("Cargo = ".$Cargo."<br>");
-*/
 
-$SQL = "INSERT INTO Oficiales VALUES('$IdOficial','$Nombre','$Cargo')";
+$SQL = "INSERT INTO oficiales VALUES(NULL,'$Nombre','$Cargo')";
 
-include("Controlador.php");
+include("controlador.php");
 
-$Conexion = Conectar();
+$Conexion = conectar();
 
-$ResultSet = Ejecutar($Conexion, $SQL);
+$ResultSet = ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 

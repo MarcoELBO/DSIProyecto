@@ -1,5 +1,4 @@
 <?php
-$NO_CENTRO = $_POST['NO_CENTRO'];
 $NO_LINEA = $_POST['NO_LINEA'];
 $VERIFICACION = $_POST['VERIFICACION'];
 $NOMBRE = $_POST['NOMBRE'];
@@ -25,13 +24,13 @@ $BD = "controlvehicular31";
 $Con = mysqli_connect($Server, $User, $Pws, $BD);
 */
 
-$SQL = "INSERT INTO CENTROS_VERIFICACION(NO_CENTRO, NO_LINEA, VERIFICACION, NOMBRE, DOMICILIO, TIPO_CENTRO) VALUES ('$NO_CENTRO', '$NO_LINEA', '$VERIFICACION', '$NOMBRE', '$DOMICILIO', '$TIPO_CENTRO')";
+$SQL = "INSERT INTO centros_verificacion(NO_CENTRO, NO_LINEA, VERIFICACION, NOMBRE, DOMICILIO, TIPO_CENTRO) VALUES (NULL, '$NO_LINEA', '$VERIFICACION', '$NOMBRE', '$DOMICILIO', '$TIPO_CENTRO')";
 
-include("Controlador.php");
+include("controlador.php");
 
-$Conexion = Conectar();
+$Conexion = conectar();
 
-$ResultSet = Ejecutar($Conexion, $SQL);
+$ResultSet = ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 

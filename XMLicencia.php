@@ -1,8 +1,8 @@
 <?php
-include("Controlador.php");
-$Con = Conectar();
-$SQL = "SELECT * FROM licenciaConducir";
-$ResultSet = Ejecutar($Con, $SQL);
+include("controlador.php");
+$Con = conectar();
+$SQL = "SELECT * FROM licenciaconducir";
+$ResultSet = ejecutar($Con, $SQL);
 $xml = new DOMDocument('1.0', 'UTF-8');
 $xml->formatOutput = true;
 
@@ -20,8 +20,8 @@ while ($fila = mysqli_fetch_assoc($ResultSet)) {
     $root->appendChild($conductor);
 }
 
-$SQL = "SELECT * FROM ConductorDomicilio";
-$ResultSet = Ejecutar($Con, $SQL);
+$SQL = "SELECT * FROM conductordomicilio";
+$ResultSet = ejecutar($Con, $SQL);
 
 while ($fila = mysqli_fetch_assoc($ResultSet)) {
     $conductor = $xml->createElement("Conductor");

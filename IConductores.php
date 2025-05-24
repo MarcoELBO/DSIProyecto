@@ -1,25 +1,21 @@
 <?php
-$CURP = $_POST['CURP'];
-$Nombre = $_POST['Nombre'];
-$Domicilio = $_POST['Domicilio'];
-$Folio_TC = $_POST['FolioTC'];
-$NoLicencia = $_POST['NoLicencia'];
+$curp = $_POST['CURP'];
+$nombre = $_POST['Nombre'];
+$domicilio = $_POST['Domicilio'];
+$folio_tc = $_POST['FolioTC'];
+$no_licencia = $_POST['NoLicencia'];
+$fecha_nacimiento = $_POST['FechaNacimiento'];
+$tipo_sangre = $_POST['TipoSangre'];
+$donador_org = $_POST['DonadorOrg'];
+$numero_emergencia = $_POST['NumeroEmergencia'];
 
-/*
-print ("CURP = " . $CURP . "<br>");
-print ("Nombre = " . $Nombre . "<br>");
-print ("Domicilio = " . $Domicilio . "<br>");
-print ("Folio TC = " . $Folio_TC . "<br>");
-print ("NoLicencia = " . $NoLicencia . "<br>");
-*/
+$SQL = "INSERT INTO conductores VALUES('$curp', '$nombre', '$domicilio', '$folio_tc', '$no_licencia', '$fecha_nacimiento', '$tipo_sangre', '$donador_org', '$numero_emergencia')";
 
-$SQL = "INSERT INTO CONDUCTORES VALUES('$CURP', '$Nombre', '$Domicilio', '$Folio_TC', '$NoLicencia')";
+include("controlador.php");
 
-include("Controlador.php");
+$Conexion = conectar();
 
-$Conexion = Conectar();
-
-$ResultSet = Ejecutar($Conexion, $SQL);
+$ResultSet = ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 
@@ -29,5 +25,4 @@ if ($ResultSet == 1) {
     print ("Error al guardar el registro" . $Conexion->error);
 }
 
-?>
 ?>
