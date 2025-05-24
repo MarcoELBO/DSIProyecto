@@ -3,7 +3,7 @@ require('fpdf.php');
 include("controlador.php");
 
 $Con = conectar();
-$SQL = "SELECT * FROM Verificacion;";
+$SQL = "SELECT * FROM verificacion;";
 $ResultSet = ejecutar($Con, $SQL);
 $DATOS = mysqli_fetch_array($ResultSet);
 
