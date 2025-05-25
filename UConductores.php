@@ -1,4 +1,7 @@
 <?php
+
+    include_once("proteccion.php");
+    validar_token('A', true);
 if(
     isset($_GET['CURP']) ||
     isset($_GET['NOMBRE']) ||

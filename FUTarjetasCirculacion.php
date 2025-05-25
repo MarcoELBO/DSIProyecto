@@ -1,3 +1,7 @@
+<?php
+    include_once("proteccion.php");
+    validar_token('A', true);
+?>
 <!DOCTYPE html>
 <html lang="es">
 

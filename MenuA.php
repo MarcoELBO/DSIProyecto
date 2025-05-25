@@ -1,3 +1,7 @@
+<?php
+    include_once("proteccion.php");
+    validar_token('A', true);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,7 +24,7 @@
                     <a href="#" class="nav-list__link dropdown__trigger">Centros Verificación <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown__menu">
                         <li class="dropdown__item"><a href="FSCentrosVerificacion.html" class="dropdown__link">CONSULTAR</a></li>
-                        <li class="dropdown__item"><a href="FCentrosVerificacion.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FCentrosVerificacion.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDCentrosVerificacion.html" class="dropdown__link">ELIMINAR</a></li>
                         <li class="dropdown__item"><a href="FUCentrosVerificacion.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
@@ -133,6 +137,6 @@
         </section>
     </main>
     <script src="./js/menu.js"></script>
->>>>>>> 20429080f26f528959ae1a9a113aec745380cf76
+
 </body>
 </html>

@@ -2,6 +2,9 @@
 // Iniciar el buffering de salida para asegurar que los encabezados HTTP se envíen correctamente
 ob_start();
 
+    include_once("proteccion.php");
+    validar_token('A', true);
+
 // Establecer el tipo de contenido de la respuesta a JSON.
 // Esto es CRÍTICO para que JavaScript interprete la respuesta correctamente.
 header('Content-Type: application/json');

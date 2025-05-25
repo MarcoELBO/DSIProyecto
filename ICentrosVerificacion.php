@@ -1,5 +1,7 @@
 <?php
 // Iniciar el buffering de salida para asegurar que los encabezados HTTP se envíen correctamente
+    include_once("proteccion.php");
+    validar_token('A', true);
 ob_start();
 
 // Establecer el tipo de contenido de la respuesta a JSON.

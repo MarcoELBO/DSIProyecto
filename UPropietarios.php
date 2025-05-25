@@ -1,4 +1,7 @@
 <?php
+
+    include_once("proteccion.php");
+    validar_token('A', true);
 if(isset($_GET['ID_Propietario']) ||
     isset($_GET['RFC']) ||
     isset($_GET['Nombre']) ||

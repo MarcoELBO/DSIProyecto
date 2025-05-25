@@ -25,5 +25,43 @@
             </form>
         </section>
     </main>
+    <script>
+        // JavaScript para manejar el evento de envío del formulario
+        document.querySelector('.form').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+            const username = document.getElementById('Username').value;
+            const password = document.getElementById('Password').value;
+
+            if (!username || !password) {
+                event.preventDefault(); // Evita el envío del formulario
+                alert('Por favor, completa todos los campos.');
+            }else{
+                url = event.target.action;
+                console.log(url);
+                let formData = new FormData();
+                formData.append('Username', username);
+                formData.append('Password', password);
+                const res = await fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+                
+                if (res.status ==200) {
+                    window.location.href = '/final/MenuA.php'; // Redirige a la página de inicio
+                } 
+                else if(res.status == 201) {
+                    window.location.href = '/final/MenuU.html'; // Redirige a la página de inicio
+
+                }
+                else {
+                    alert('Correo o contraseña incorrecta.');
+                }
+            }
+        });
+
+    </script>
 </body>
 </html>

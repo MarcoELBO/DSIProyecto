@@ -1,5 +1,8 @@
 <?php
 //$ID_DOMICILIO = $_POST['ID_DOMICILIO'];
+
+    include_once("proteccion.php");
+    validar_token('A', true);
 $CALLE = $_POST['CALLE'];
 $CP = $_POST['CP'];
 $COLONIA = $_POST['COLONIA'];

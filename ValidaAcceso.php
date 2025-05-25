@@ -2,56 +2,89 @@
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 
-$SQL = "SELECT * FROM Usuario WHERE Username = '$Username';";
+$SQL = "SELECT * FROM usuario WHERE Username = '$Username';";
 
 include("Controlador.php");
+include("proteccion.php");
 
 $Conexion = Conectar();
 $ResultSet = Ejecutar($Conexion, $SQL);
 $Fila = mysqli_fetch_row($ResultSet);
 $N = mysqli_num_rows($ResultSet);
 
-if ($N == 0) {
-    print ("Usuario no existe<br>");
-} else {
-    print ("Usuario existe<br>");
-    if ($Fila[1] == $Password) {
-        print ("Contraseña correcta<br>");
-        $ResetIntentosSQL = "UPDATE Usuario SET Intentos = 0 WHERE Username = '$Username';";
-        Ejecutar($Conexion, $ResetIntentosSQL);
 
+if ($N == 0) {
+    http_response_code(404);
+    header('Content-Type: application/json');
+    echo json_encode(['error' => 'Usuario no existe']);
+    exit();
+} else {
+    // Usuario existe
+    
+    if ($Fila[1] == $Password) {
+        // Contraseña correcta
+         $jwt = generador_token($Fila[2], $Fila[0]);
+    setcookie(
+            'auth_token',
+            $jwt,
+            [
+                'expires' => time() + 3600, // Expira en 1 hora
+                'path' => '/',
+                'domain' => '', // Deja vacío para el dominio actual
+                'secure' => true, // ¡Siempre true en producción con HTTPS!
+                'httponly' => true,
+                'samesite' => 'Lax'
+            ]
+        );
+
+        // Redirigir al usuario a la página protegida
+        
+        $ResetIntentosSQL = "UPDATE usuario SET Intentos = 0 WHERE Username = '$Username';";
+        Ejecutar($Conexion, $ResetIntentosSQL);
+        Desconectar($Conexion);
         if ($Fila[2] == "A") {
-            header("Location: MenuA.html");
-            exit();
+           http_response_code(response_code: 200);
+            header('Content-Type: application/json');
+            echo json_encode(['error' => 'Usuario bloqueado por demasiados intentos fallidos']);
         } else {
-            header("Location: MenuU.html");
-            exit();
+           http_response_code(response_code: 201);
+            header('Content-Type: application/json');
+            echo json_encode(['error' => 'Usuario bloqueado por demasiados intentos fallidos']);
         }
+        // Información adicional sobre estado del usuario (no se envía por HTTP, solo para debug)
+        /*
         if ($Fila[3] == 1) {
-            print ("Eres Activo<br>");
+            // Usuario activo
         } else {
-            print ("Eres Inactivo<br>");
+            // Usuario inactivo
         }
         if ($Fila[4] == 0) {
-            print ("No estas bloqueado<br>");
+            // No bloqueado
         } else {
-            print ("Estas bloqueado<br>");
+            // Bloqueado
         }
+        */
     } else {
-        print ("Contraseña incorrecta<br>");
+        // Contraseña incorrecta
         $Intentos = $Fila[5] + 1;
         if ($Intentos >= 3) {
-
-            $BloquearSQL = "UPDATE Usuario SET Intentos = $Intentos, Bloqueo = 1 WHERE Username = '$Username';";
+            $BloquearSQL = "UPDATE usuario SET Intentos = $Intentos, Bloqueo = 1 WHERE Username = '$Username';";
             Ejecutar($Conexion, $BloquearSQL);
-            print ("Usuario bloqueado por demasiados intentos fallidos<br>");
+            http_response_code(response_code: 403);
+            header('Content-Type: application/json');
+            echo json_encode(['error' => 'Usuario bloqueado por demasiados intentos fallidos']);
+            Desconectar($Conexion);
+            exit();
         } else {
-
-            $ActualizarIntentosSQL = "UPDATE Usuario SET Intentos = $Intentos WHERE Username = '$Username';";
+            $ActualizarIntentosSQL = "UPDATE usuario SET Intentos = $Intentos WHERE Username = '$Username';";
             Ejecutar($Conexion, $ActualizarIntentosSQL);
-            print ("Intentos fallidos: $Intentos<br>");
+            http_response_code(response_code: 401);
+            header('Content-Type: application/json');
+            echo json_encode(['error' => 'Contraseña incorrecta', 'intentos' => $Intentos]);
+            Desconectar($Conexion);
+            exit();
         }
     }
+    
 }
-Desconectar($Conexion);
 ?>
