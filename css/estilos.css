@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #007bff; /* Un azul vibrante */
+    --primary-color-dark: #0056b3; /* Un azul más oscuro para hover */
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --border-color: #dee2e6;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+}
+
+:root {
+    --primary-color: #007bff; /* Un azul vibrante */
+    --primary-color-dark: #0056b3; /* Un azul más oscuro para hover */
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --border-color: #dee2e6;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+}

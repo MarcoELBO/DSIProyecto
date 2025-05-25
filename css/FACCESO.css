@@ -1,0 +1,416 @@
+/* Base */
+:root {
+    --color-primary: #3498db; /* Un azul agradable */
+    --color-primary-dark: #2980b9;
+    --color-text: #333;
+    --color-background: #f4f7f6;
+    --color-white: #fff;
+    --color-border: #e0e0e0;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius-base: 8px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+}
+
+
+:root {
+    --color-primary: #3498db; /* Azul */
+    --color-primary-dark: #2980b9; /* Azul más oscuro */
+    --color-secondary: #2ecc71; /* Verde */
+    --color-accent: #f39c12; /* Naranja */
+    --color-text: #333;
+    --color-text-light: #555;
+    --color-white: #ffffff;
+    --color-background-light: #f4f7f6;
+    --color-background-dark: #2c3e50; /* Un gris azulado oscuro */
+    --color-border: #ddd;
+    --color-border-light: #eee;
+
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+
+    --shadow-elevation-low: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-elevation-medium: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    --shadow-elevation-high: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+body {
+    font-family: Arial, sans-serif; /* Asegúrate de que esta línea esté en tu CSS principal */
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+}
+
+body {
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Para centrar el formulario verticalmente */
+}
+
+/* Page Wrapper - BEM Block */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-sm);
+    box-sizing: border-box; /* Asegura que el padding no añada al ancho total */
+}
+
+/* Form Card - BEM Block */
+.form-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-light);
+    padding: var(--spacing-md);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el formulario */
+    box-sizing: border-box;
+    text-align: center; /* Centra el título */
+}
+
+.form-card__title {
+    font-size: 1.8em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 600;
+}
+
+/* Form - BEM Block */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm); /* Espacio entre grupos de formulario */
+}
+
+/* Form Group - BEM Element */
+.form__group {
+    margin-bottom: var(--spacing-xs); /* Espacio entre cada campo y label */
+    text-align: left; /* Alinea los labels a la izquierda */
+}
+
+/* Form Label - BEM Element */
+.form__label {
+    display: block; /* Hace que el label ocupe su propia línea */
+    font-weight: 500;
+    margin-bottom: 6px; /* Espacio entre label y input */
+    color: var(--color-text);
+    font-size: 0.95em;
+}
+
+/* Form Input - BEM Element */
+.form__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-base);
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    font-size: 1em;
+    color: var(--color-text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form__input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* Sutil brillo al enfocar */
+}
+
+/* Form Group Actions - BEM Modifier */
+.form__group--actions {
+    margin-top: var(--spacing-md); /* Espacio extra para el botón de login */
+    text-align: center; /* Centra el botón */
+}
+
+/* Form Button - BEM Element */
+.form__button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    max-width: 200px; /* Pero con un ancho máximo para no ser demasiado grande */
+}
+
+.form__button:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+.form__button:active {
+    transform: translateY(0);
+}
+
+/* Form Button Modifier - Danger */
+.form__button--danger {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.form__button--danger:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el ratón */
+}
+/* Form Input Modifiers - Textarea and File */
+.form__input--textarea {
+    resize: vertical; /* Permite redimensionar verticalmente el textarea */
+    min-height: 80px; /* Altura mínima para el textarea */
+    padding: 10px 15px; /* Ajuste de padding si es necesario para textarea */
+}
+
+.form__input--file {
+    padding: 10px 15px; /* Ajuste de padding para campos de tipo file */
+}
+
+/* Ajuste general para el ancho máximo del form-card si el formulario es muy largo */
+@media (min-width: 600px) {
+    .form-card {
+        max-width: 550px; /* Aumenta el ancho máximo para formularios con muchos campos */
+    }
+}
+
+/* --- Header y Navegación Principal --- */
+.main-header {
+    background-color: var(--color-primary-dark); /* Un tono más oscuro del primario para el header */
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: var(--shadow-elevation-medium);
+    position: absolute; /* Fija el header en la parte superior */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center; /* Centra los elementos de la navegación */
+    align-items: center;
+    max-width: var(--max-width-lg); /* Limita el ancho del contenido del nav */
+    margin: 0 auto; /* Centra el nav */
+}
+
+.main-nav__checkbox {
+    display: none; /* Oculta el checkbox nativo */
+}
+
+.main-nav__toggle {
+    display: none; /* Oculto por defecto en desktop */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--color-white);
+    margin-right: var(--spacing-md);
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para poner los ítems en una fila */
+    gap: var(--spacing-lg); /* Espacio entre los ítems de nivel superior */
+}
+
+.nav-list__item {
+    position: relative; /* Necesario para posicionar el submenú */
+}
+
+.nav-list__link {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-md);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: var(--border-radius-sm);
+}
+
+.nav-list__link:hover {
+    background-color: var(--color-primary); /* Color de hover para el menú principal */
+    color: var(--color-white);
+}
+
+.nav-list__link .fas {
+    margin-left: var(--spacing-xs);
+    font-size: 0.8em; /* Un poco más pequeño que el texto */
+    transition: transform 0.3s ease;
+}
+
+/* --- Dropdown (Submenú) --- */
+.dropdown__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Coloca el submenú justo debajo del elemento padre */
+    left: 0;
+    background-color: var(--color-background-dark); /* Fondo oscuro para los submenús */
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-elevation-medium);
+    min-width: 200px; /* Ancho mínimo para los submenús */
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Oculto por defecto */
+    transform: translateY(10px); /* Ligeramente hacia abajo */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 1001; /* Por encima del header */
+}
+
+.dropdown__item {
+    border-bottom: 1px solid var(--color-border-light); /* Separador entre ítems del submenú */
+}
+
+.dropdown__item:last-child {
+    border-bottom: none;
+}
+
+.dropdown__link {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: var(--color-white); /* Color de texto para submenú */
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown__link:hover {
+    background-color: var(--color-primary); /* Color de hover para los ítems del submenú */
+    color: var(--color-white);
+}
+
+/* Mostrar Dropdown en Hover */
+.nav-list__item.dropdown:hover > .dropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Rotar flecha del trigger al hacer hover */
+.nav-list__item.dropdown:hover > .dropdown__trigger .fas {
+    transform: rotate(180deg);
+}
+
+/* --- Contenido Principal (para empujar por debajo del header fijo) --- */
+.page-content {
+    padding: var(--spacing-xl) var(--spacing-md); /* Ajusta según el tamaño de tu header */
+    max-width: var(--max-width-lg);
+    margin: 0 auto;
+}
+
+/* --- Media Queries para Responsividad (Mobile First) --- */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav__toggle {
+        display: block; /* Muestra el icono de hamburguesa en móvil */
+        width: 100%;
+        text-align: right; /* Alinea el icono a la derecha */
+        padding: var(--spacing-xs) 0;
+    }
+
+    .nav-list {
+        flex-direction: column; /* Apila los ítems en móvil */
+        width: 100%;
+        max-height: 0; /* Oculta el menú por defecto */
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        background-color: var(--color-primary-dark); /* Fondo del menú desplegado */
+    }
+
+    /* Mostrar menú en móvil al hacer click en el toggle */
+    .main-nav__checkbox:checked ~ .nav-list {
+        max-height: 500px; /* Un valor grande para mostrar todo el menú */
+        transition: max-height 0.5s ease-in;
+    }
+
+    .nav-list__item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador para ítems principales */
+    }
+
+    .nav-list__item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-list__link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-list__link .fas {
+        float: right; /* Coloca la flecha a la derecha */
+        margin-left: 0;
+        margin-right: var(--spacing-xs);
+        transform: rotate(0deg); /* Asegura la posición inicial */
+    }
+
+    /* Rotar flecha en móvil cuando el submenú está abierto */
+    .nav-list__item.dropdown.active > .dropdown__trigger .fas {
+        transform: rotate(180deg);
+    }
+
+    .dropdown__menu {
+        position: static; /* No flotante, sino dentro del flujo */
+        background-color: rgba(0, 0, 0, 0.2); /* Fondo más claro para el submenú en móvil */
+        box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        opacity: 1; /* Siempre visible si su padre está activo */
+        visibility: visible;
+        transform: none;
+        max-height: 0; /* Oculto por defecto en móvil */
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .dropdown__item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separador más sutil para sub-ítems */
+    }
+
+    .dropdown__link {
+        padding-left: calc(var(--spacing-md) * 2); /* Indentación para sub-ítems */
+    }
+
+    /* JavaScript para toggle de submenú en móvil (se requiere JS) */
+    .nav-list__item.dropdown.active .dropdown__menu {
+        max-height: 300px; /* Ajusta según cuántos ítems tenga tu submenú */
+        transition: max-height 0.4s ease-in;
+    }
+}

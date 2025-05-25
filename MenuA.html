@@ -1,155 +1,128 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Menu Desplegable</title>
-    <style type="text/css">
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        #header {
-            margin: auto;
-            width: 500px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        ul,
-        ol {
-            list-style: none;
-        }
-
-        .nav>li {
-            float: left;
-        }
-
-        .nav li a {
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 12px;
-            display: block;
-        }
-
-        .nav li a:hover {
-            background-color: #434343;
-        }
-
-        .nav li ul {
-            display: none;
-            position: absolute;
-            min-width: 140px;
-        }
-
-        .nav li:hover>ul {
-            display: block;
-        }
-
-        .nav li ul li {
-            position: relative;
-        }
-
-        .nav li ul li ul {
-            right: -140px;
-            top: 0px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
 </head>
-
 <body>
-    <div id="header">
-        <ul class="nav">
-            <li><a href="">Centros Verificaciones</a>
-                <ul>
-                    <li><a href="FSCentrosVerificacion.html">CONSULTAR</a></li>
-                    <li><a href="FCentrosVerificacion.html">INSERTAR</a></li>
-                    <li><a href="FDCentrosVerificacion.html">ELIMINAR</a></li>
-                    <li><a href="FUCentrosVerificacion.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-            <li><a href="">Conductores</a>
-                <ul>
-                    <li><a href="FSConductores.html">CONSULTAR</a></li>
-                    <li><a href="FConductores.html">INSERTAR</a></li>
-                    <li><a href="FDConductores.html">ELIMINAR</a></li>
-                    <li><a href="FUConductores.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Domicilios</a>
-                <ul>
-                    <li><a href="FSDomicilios.html">CONSULTAR</a></li>
-                    <li><a href="FDomicilios.html">INSERTAR</a></li>
-                    <li><a href="FDDomicilios.html">ELIMINAR</a></li>
-                    <li><a href="FUDomicilios.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Licencias</a>
-                <ul>
-                    <li><a href="FSLicencias.html">CONSULTAR</a></li>
-                    <li><a href="FLicencias.html">INSERTAR</a></li>
-                    <li><a href="FDLicencias.html">ELIMINAR</a></li>
-                    <li><a href="FULicencias.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Oficiales</a>
-                <ul>
-                    <li><a href="FSOficiales.html">CONSULTAR</a></li>
-                    <li><a href="FOficiales.html">INSERTAR</a></li>
-                    <li><a href="FDOficiales.html">ELIMINAR</a></li>
-                    <li><a href="FUOficiales.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Pagos</a>
-                <ul>
-                    <li><a href="FSPagos.html">CONSULTAR</a></li>
-                    <li><a href="FPagos.html">INSERTAR</a></li>
-                    <li><a href="FDPagos.html">ELIMINAR</a></li>
-                    <li><a href="FUPagos.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Propietarios</a>
-                <ul>
-                    <li><a href="FSPropietarios.html">CONSULTAR</a></li>
-                    <li><a href="FPropietarios.html">INSERTAR</a></li>
-                    <li><a href="FDPropietarios.html">ELIMINAR</a></li>
-                    <li><a href="FUPropietarios.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Tarjetas de Circulacion</a>
-                <ul>
-                    <li><a href="FSTarjetas_Circulacion.html">CONSULTAR</a></li>
-                    <li><a href="FTarjetasCirculacion.html">INSERTAR</a></li>
-                    <li><a href="FDTarjetasCirculacion.html">ELIMINAR</a></li>
-                    <li><a href="FUTarjetasCirculacion.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Tarjetas de Verificaciones</a>
-                <ul>
-                    <li><a href="FSTarjetas_Verificacion.html">CONSULTAR</a></li>
-                    <li><a href="FTarjetasVerificacion.html">INSERTAR</a></li>
-                    <li><a href="FDTarjetasVerificacion.html">ELIMINAR</a></li>
-                    <li><a href="FUTarjetasVerificacion.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-            <li><a href="">Vehiculo</a>
-                <ul>
-                    <li><a href="FSVehiculos.html">CONSULTAR</a></li>
-                    <li><a href="FVehiculos.html">INSERTAR</a></li>
-                    <li><a href="FDVehiculos.html">ELIMINAR</a></li>
-                    <li><a href="FUVehiculos.php">MODIFICAR</a></li>
-                </ul>
-            </li>
-
-        </ul>
-    </div>
+    <header class="main-header">
+        <nav class="main-nav">
+            <input type="checkbox" id="menu-toggle" class="main-nav__checkbox">
+            <label for="menu-toggle" class="main-nav__toggle">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="nav-list">
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Centros Verificación <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSCentrosVerificacion.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FCentrosVerificacion.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDCentrosVerificacion.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUCentrosVerificacion.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Conductores <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSConductores.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FConductores.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDConductores.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUConductores.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Domicilios <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSDomicilios.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FDomicilios.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDDomicilios.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUDomicilios.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Licencias <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSLicencias.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FLicencias.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDLicencias.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FULicencias.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Oficiales <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSOficiales.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FOficiales.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDOficiales.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUOficiales.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Pagos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSPagos.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FPagos.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDPagos.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUPagos.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Propietarios <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSPropietarios.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FPropietarios.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDPropietarios.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUPropietarios.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Tarjetas de Circulación <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSTarjetas_Circulacion.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FTarjetasCirculacion.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDTarjetasCirculacion.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUTarjetasCirculacion.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Tarjetas de Verificación <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSTarjetas_Verificacion.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FTarjetasVerificacion.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDTarjetasVerificacion.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUTarjetasVerificacion.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Vehículos <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSVehiculos.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FVehiculos.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDVehiculos.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUVehiculos.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+                 <li class="nav-list__item dropdown">
+                    <a href="#" class="nav-list__link dropdown__trigger">Multas <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown__menu">
+                        <li class="dropdown__item"><a href="FSMultas.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FMultas.html" class="dropdown__link">INSERTAR</a></li>
+                        <li class="dropdown__item"><a href="FDMultas.html" class="dropdown__link">ELIMINAR</a></li>
+                        <li class="dropdown__item"><a href="FUMultas.php" class="dropdown__link">MODIFICAR</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="page-content">
+        <h1>Bienvenido al Sistema de Gestión</h1>
+        <p>Selecciona una opción del menú superior para empezar.</p>
+    </main>
+    <script src="./js/menu.js"></script>
+>>>>>>> 20429080f26f528959ae1a9a113aec745380cf76
 </body>
-
 </html>

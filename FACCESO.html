@@ -1,15 +1,29 @@
-<html>
-
-<form action="ValidaAcceso.php" method="post">
-    <label>Username:</label>
-    <input type="text" name="Username" id="Username">
-    <br>
-    <label>Password:</label>
-    <input type="text" name="Password" id="Password">
-    <br>
-    <label>
-        <input type="submit" value="Login" id="login">
-
-</form>
-
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Acceso</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">
+</head>
+<body>
+    <main class="page-wrapper">
+        <section class="form-card">
+            <h1 class="form-card__title">Iniciar Sesión</h1>
+            <form action="ValidaAcceso.php" method="post" class="form">
+                <div class="form__group">
+                    <label for="Username" class="form__label">Username:</label>
+                    <input type="text" name="Username" id="Username" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Password" class="form__label">Password:</label>
+                    <input type="password" name="Password" id="Password" class="form__input">
+                </div>
+                <div class="form__group form__group--actions">
+                    <input type="submit" value="Login" id="login" class="form__button">
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
 </html>
