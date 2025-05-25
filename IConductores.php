@@ -13,8 +13,8 @@ try {
     $curp = $_POST['CURP'];
     $nombre = $_POST['Nombre'];
     $domicilio = $_POST['Domicilio'];
-    $folio_tc = $_POST['FolioTC'];
-    $no_licencia = $_POST['NoLicencia'];
+    $folio_tc =  1; //esta dato no importa pero para no modificar la base de datos se deja como 1;
+    $no_licencia = '1'; //esta dato no importa pero para no modificar la base de datos se deja como 1
     $fecha_nacimiento = $_POST['FechaNacimiento'];
     $tipo_sangre = $_POST['TipoSangre'];
     $donador_org = $_POST['DonadorOrg'];

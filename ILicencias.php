@@ -14,17 +14,59 @@ try {
     $Fecha_validacion = $_REQUEST['fecha_validacion'];
     $antiguedad = $_REQUEST['antiguedad'];
     $observaciones = $_REQUEST['observaciones'];
-    $firma = 'valor_temporal_firma'; // Asumí que la firma se obtiene de otra manera, ya que no está en el $_REQUEST
     $Domicilio = $_REQUEST['domicilio']; // Cuidado: La tabla licencias probablemente no tiene un Domicilio directo, sino un conductor_id
     $fundamento_legal = $_REQUEST['fundamento_legal'];
-    $foto = 'valor_temporal_foto'; // Asumí que la foto se obtiene de otra manera, ya que no está en el $_REQUEST
+    $foto = $_FILES["foto"];
+    $nombre_foto = $foto['name'];
+    $size_foto = $foto['size'];
+    $tipo_foto = $foto['type'];
+    $temp_foto = $foto['tmp_name'];
+    $firma = $_FILES['firma'];
+    $nombre_firma = $firma['name'];
+    $size_firma = $firma['size'];
+    $temp_firma = $firma['tmp_name'];
+    $tipo_firma = $firma['type'];
 
+        $tipos_permitidos = ['image/jpeg', 'image/png'];
+    if (!in_array($tipo_foto, haystack: $tipos_permitidos) && !in_array($tipo_firma, $tipos_permitidos)) {
+        echo "Tipo de archivo no permitido. Se permiten: JPEG y PNG,.";
+        exit;
+    }
+
+     $MAX_SIZE = 1024* 1024* 10;//10MB
+    if($size_foto > $MAX_SIZE && $size_firma > $MAX_SIZE)
+    {
+        echo "Su archivo pesa más de 10MB";
+        exit;
+    }
+    $directorio = 'images/';
+    $subdirectorio_foto = 'fotos/';
+    $subdirectorio_firmas = 'firmas/';
+    if(!file_exists($directorio)) //crea el directorio images si no existe
+    {
+        mkdir($directorio);
+    }
+    if(!file_exists(($directorio . $subdirectorio_foto)))
+    {
+        mkdir($directorio . $subdirectorio_foto);
+    }
+    if(!file_exists(($directorio . $subdirectorio_firmas)))
+    {
+        mkdir($directorio . $subdirectorio_firmas);
+    }
+    
+    $nombre_archivo_foto = uniqid() . "_" . basename($nombre_foto);
+    $nombre_archivo_firma = uniqid() . "_" . basename($nombre_firma);
+    $ubicacion_foto = $directorio . $subdirectorio_foto . $nombre_archivo_foto;
+    $ubicacion_firma = $directorio . $subdirectorio_firmas . $nombre_archivo_firma;
+    move_uploaded_file($temp_foto, $ubicacion_foto);
+    move_uploaded_file($temp_firma,  $ubicacion_firma);
     // Crear la instrucción SQL para un INSERT implícito.
     // Los valores deben estar en el mismo orden que las columnas en la tabla 'licencias'.
     // NOTA: Esta construcción de la consulta es VULNERABLE a inyección SQL.
     // Para proyectos de producción, se recomienda encarecidamente usar sentencias preparadas.
     // Se mantiene 'NULL' para la primera columna (asumo que es un ID AUTO_INCREMENT).
-    $SQL = "INSERT INTO licencias VALUES (NULL, '$conductor', '$Fecha_expedicion', '$Fecha_validacion', '$antiguedad', '$observaciones', '$firma', '$Domicilio', '$fundamento_legal', '$foto')";
+    $SQL = "INSERT INTO licencias VALUES (NULL, '$conductor', '$Fecha_expedicion', '$Fecha_validacion', '$antiguedad', '$observaciones', '$ubicacion_firma', '$Domicilio', '$fundamento_legal', '$ubicacion_foto')";
     // Incluir el controlador de la base de datos y establecer la conexión
     include("Controlador.php");
     $Conexion = Conectar();
