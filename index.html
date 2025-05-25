@@ -50,10 +50,16 @@
                 });
                 
                 if (res.status ==200) {
-                    window.location.href = '/final/MenuA.php'; // Redirige a la página de inicio
+                        let actionUrl = event.target.action;
+                        // Reemplaza el último segmento por 'MenuA.php'
+                        let newUrl = actionUrl.replace(/[^\/]*$/, 'MenuA.php');
+                        window.location.href = newUrl;
                 } 
                 else if(res.status == 201) {
-                    window.location.href = '/final/MenuU.html'; // Redirige a la página de inicio
+                    let actionUrl = event.target.action;
+                    // Reemplaza el último segmento por 'MenuU.php'
+                    let newUrl = actionUrl.replace(/[^\/]*$/, 'MenuU.php');
+                    window.location.href = newUrl;
 
                 }
                 else {
