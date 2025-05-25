@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $ID_TC = $_REQUEST['ID_TC'];
 $SQL = "DELETE FROM tarjetas_circulacion WHERE ID_TC = '$ID_TC'";
 include("Controlador.php");

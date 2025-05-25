@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $ID_LICENCIA = $_REQUEST['ID_LICENCIA'];
 $SQL = "DELETE FROM licencias WHERE ID_LICENCIA = '$ID_LICENCIA'";
 include("Controlador.php");

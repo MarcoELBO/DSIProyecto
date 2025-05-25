@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('T', true);
 include("Controlador.php");
 $Con = Conectar();
 $SQL = "SELECT * FROM vehiculotcp";

@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $NO_CENTRO = $_REQUEST['NO_CENTRO'];
 $SQL = "DELETE FROM centros_verificacion WHERE NO_CENTRO = '$NO_CENTRO'";
 

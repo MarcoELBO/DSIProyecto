@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 //Recuperar datos
 $ID_Oficial = $_REQUEST['ID_Oficial'];
 //Crear instruccion

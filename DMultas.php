@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $Folio = $_REQUEST['Folio'];
 $SQL = "DELETE FROM multas WHERE Folio = '$Folio'";
 include("Controlador.php");

@@ -1,5 +1,7 @@
 <?php
 // Iniciar el buffering de salida.
+    include_once("proteccion.php");
+    validar_token('T', true);
 ob_start();
 
 // Incluir el controlador de la base de datos

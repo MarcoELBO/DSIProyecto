@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $FOLIO_VERIFICACION = $_REQUEST['FOLIO_VERIFICACION'];
 $SQL = "DELETE FROM tarjetas_verificacion WHERE FOLIO_VERIFICACION = '$FOLIO_VERIFICACION'";
 include("Controlador.php");

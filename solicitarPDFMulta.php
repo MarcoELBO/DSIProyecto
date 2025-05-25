@@ -1,3 +1,7 @@
+<?php
+    include_once("proteccion.php");
+    validar_token('T', true);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,11 +13,11 @@
 </head>
 <body>
     <div class="page-container">
-        <h1 class="page-title">Solicitar PDF de Licencia</h1>
+        <h1 class="page-title">Solicitar PDF de Multa</h1>
 
-        <form class="form form--pdf-request js-form-submit" action="VLicencia.php" method="post">
+        <form class="form form--pdf-request js-form-submit" action="VMultas.php" method="post">
             <div class="form__group">
-                <label for="id" class="form__label">ID de Licencia:</label>
+                <label for="id" class="form__label">ID Multa:</label>
                 <input type="text" id="id" name="id" class="form__input" required>
             </div>
 

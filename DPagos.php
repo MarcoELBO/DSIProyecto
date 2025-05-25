@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $ID_Pago = $_REQUEST['ID_Pago'];
 $SQL = "DELETE FROM pagos WHERE ID_Pago = '$ID_Pago'";
 include("Controlador.php");

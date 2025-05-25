@@ -24,7 +24,7 @@
                 <li class="nav-list__item dropdown">
                     <a href="#" class="nav-list__link dropdown__trigger">Centros Verificación <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown__menu">
-                        <li class="dropdown__item"><a href="FSCentrosVerificacion.html" class="dropdown__link">CONSULTAR</a></li>
+                        <li class="dropdown__item"><a href="FSCentrosVerificacion.php" class="dropdown__link">CONSULTAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">

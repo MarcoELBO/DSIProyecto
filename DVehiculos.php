@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $Placa = $_REQUEST['Placa'];
 $SQL = "DELETE FROM vehiculos WHERE Placa = '$Placa'";
 include("Controlador.php");

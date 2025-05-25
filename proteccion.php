@@ -163,7 +163,7 @@ function validar_token($tipo_usuario, bool $isHtmlRequest = false): object
     try {
         // Para JWT v6.x+, Key es requerido
         $decoded = JWT::decode($jwt, new Key(JWT_SECRET_KEY, 'HS256'));
-        if(!($decoded->data->userRole == $tipo_usuario)){
+        if(!($decoded->data->userRole == $tipo_usuario) && !($tipo_usuario == 'T')){
             sendUnauthorizedResponse('No tienes permiso para acceder a esta sección.', $isHtmlRequest);
         }
         return $decoded; // Retorna el payload decodificado

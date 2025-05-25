@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $NO_DOMICILIO = $_REQUEST['NO_DOMICILIO'];
 $SQL = "DELETE FROM domicilios WHERE NO_DOMICILIO = '$NO_DOMICILIO'";
 include("Controlador.php");

@@ -1,4 +1,6 @@
 <?php
+    include_once("proteccion.php");
+    validar_token('A', true);
 $CURP = $_REQUEST['CURP'];
 $SQL = "DELETE FROM conductores WHERE CURP = '$CURP'";
 include("Controlador.php");

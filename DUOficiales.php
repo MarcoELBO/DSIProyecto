@@ -1,3 +1,7 @@
+<?php
+    include_once("proteccion.php");
+    validar_token('A', true);
+?>
 <html>
 <form action="UOficiales.php">
     <h4>Editar Oficiales</h4>

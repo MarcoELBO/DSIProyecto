@@ -2,6 +2,8 @@
 // Iniciar el buffering de salida. Esto captura toda la salida del script
 // para que podamos enviar encabezados HTTP (como el código de estado)
 // antes de que se envíe cualquier contenido (HTML o PDF).
+    include_once("proteccion.php");
+    validar_token('T', true);
 ob_start();
 
 // Incluir la librería FPDF
