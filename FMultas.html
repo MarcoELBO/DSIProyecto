@@ -32,16 +32,24 @@
                     <input type="number" name="Licencia" id="Licencia" required class="form__input">
                 </div>
                 <div class="form__group">
-                    <label for="T_Verificacion" class="form__label">Tipo de Verificación (ID):</label>
+                    <label for="T_Verificacion" class="form__label">Tarjeta de Verificación (ID):</label>
                     <input type="number" name="T_Verificacion" id="T_Verificacion" class="form__input">
                 </div>
                 <div class="form__group">
-                    <label for="T_Circulacion" class="form__label">Tipo de Circulación (ID):</label>
+                    <label for="T_Circulacion" class="form__label">Tarjeta de Circulación (ID):</label>
                     <input type="number" name="T_Circulacion" id="T_Circulacion" required class="form__input">
                 </div>
                 <div class="form__group">
                     <label for="Policia" class="form__label">Policía (ID Oficial):</label>
                     <input type="number" name="Policia" id="Policia" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Observaciones" class="form__label">Observaciones</label>
+                    <input type="text" name="Observaciones" id="Observaciones" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Lugar" class="form__label">Lugar</label>
+                    <input type="text" name="Lugar" id="Lugar" required class="form__input">
                 </div>
                 <div class="form__group form__group--actions">
                     <input type="submit" value="Registrar Multa" class="form__button">
@@ -49,5 +57,6 @@
             </form>
         </section>
     </main>
+    <script src="./js/manejadorExcepciones.js"></script>
 </body>
 </html>

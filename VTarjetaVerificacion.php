@@ -1,11 +1,13 @@
 <?php
 require('fpdf.php');
-include("controlador.php");
-
-$Con = conectar();
-$SQL = "SELECT * FROM Verificacion;";
-$ResultSet = ejecutar($Con, $SQL);
-$DATOS = mysqli_fetch_array($ResultSet);
+include("Controlador.php");
+// --- 1. Obtención y Validación de Parámetros ---
+$id_multa = isset($_REQUEST["id"]) ? $_REQUEST["id"] : '';
+$Con = Conectar();
+//$SQL = "SELECT * FROM verificacion;";
+//$ResultSet = Ejecutar($Con, $SQL);
+//$DATOS = mysqli_fetch_array($ResultSet);
+Desconectar($Con);
 
 // Crear documento PDF tamaño carta (215.9 x 279.4 mm)
 $pdf = new FPDF('L', 'mm', array(210, 110));
@@ -35,11 +37,11 @@ $pdf->Cell(0, 6, 'DATOS DEL VEHICULO', 0, 1);
 $pdf->SetXY(2, 32);
 $pdf->SetFont('Arial', 'B', 6);
 $pdf->Cell(30, 2, 'PARTICULAR', 0);
-$pdf->Cell(30, 2, $DATOS[0], 0);
-$pdf->Cell(30, 2, $DATOS[1], 0);
-$pdf->Cell(20, 2, $DATOS[2], 0);
-$pdf->Cell(35, 2, $DATOS[3], 0);
-$pdf->Cell(30, 2, 'Vigencia: ' . $DATOS[4], 0);
+$pdf->Cell(30, 2, 'dato', 0);
+$pdf->Cell(30, 2, 'dato', 0);
+$pdf->Cell(20, 2, 'dato', 0);
+$pdf->Cell(35, 2, 'dato', 0);
+$pdf->Cell(30, 2, 'Vigencia: ' . 'dato', 0);
 $pdf->Rect(3, 35, 135, 0.5, 'F');
 
 $pdf->SetFont('Arial', '', 6);
@@ -54,10 +56,10 @@ $pdf->Image('Imagenes/QR.png', 145, 40, 20, 20); // Logo
 
 $pdf->SetXY(2, 40);
 $pdf->SetFont('Arial', 'B', 6);
-$pdf->Cell(35, 8, $DATOS[5], 0);
-$pdf->Cell(35, 8, $DATOS[6], 0);
+$pdf->Cell(35, 8, 'dato', 0);
+$pdf->Cell(35, 8, 'dato', 0);
 $pdf->Cell(30, 8, 'Gasolina', 0);
-$pdf->Cell(35, 8, $DATOS[7], 0);
+$pdf->Cell(35, 8, 'dato', 0);
 $pdf->Rect(3, 46, 135, 0.5, 'F');
 
 $pdf->SetXY(2, 45);
@@ -70,10 +72,10 @@ $pdf->Rect(3, 57, 135, 0.5, 'F');
 
 $pdf->SetXY(2, 51);
 $pdf->SetFont('Arial', 'B', 6);
-$pdf->Cell(35, 8, $DATOS[9], 0);
-$pdf->Cell(35, 8, $DATOS[10], 0);
-$pdf->Cell(30, 8, $DATOS[11], 0);
-$pdf->Cell(35, 8, $DATOS[12], 0);
+$pdf->Cell(35, 8, 'dato', 0);
+$pdf->Cell(35, 8, 'dato', 0);
+$pdf->Cell(30, 8, 'dato', 0);
+$pdf->Cell(35, 8, 'dato', 0);
 $pdf->Rect(3, 46, 130, 0.5, 'F');
 
 $pdf->SetXY(2, 56);
@@ -85,21 +87,20 @@ $pdf->Cell(35, 8, 'MUNICIPIO', 0);
 
 $pdf->SetXY(2, 65);
 $pdf->Cell(35, 5, 'No. DE CENTRO', 0, 0);
-$pdf->Cell(35, 5, $DATOS[13], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'TECNICO VERIFICADOR', 0, 0);
-$pdf->Cell(35, 5, $DATOS[14], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'FECHA DE EXPEDICION', 0, 0);
-$pdf->Cell(35, 5, $DATOS[15], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'HORA DE ENTRADA', 0, 0);
-$pdf->Cell(35, 5, $DATOS[16], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'HORA DE SALIDA', 0, 0);
-$pdf->Cell(35, 5, $DATOS[17], 0, 1);
 $pdf->Cell(35, 5, 'MOTIVO DE VERIFICACION', 0, 0);
-$pdf->Cell(35, 5, $DATOS[18], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'FOLIO DE CERTIFICADO', 0, 0);
-$pdf->Cell(35, 5, $DATOS[19], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 $pdf->Cell(35, 5, 'SEMESTRE', 0, 0);
-$pdf->Cell(35, 5, $DATOS[19], 0, 1);
+$pdf->Cell(35, 5, 'dato', 0, 1);
 
 $pdf->Image('Imagenes/LQ.png', 140, 70, 30, 30); // Logo
 

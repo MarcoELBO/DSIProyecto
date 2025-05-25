@@ -17,11 +17,19 @@ Fecha_nacimiento = '$Fecha_nacimiento'
 WHERE ID_Propietario = '$ID_Propietario';";
 
 include("Controlador.php");
+<<<<<<< HEAD
 $con = conectar();
 $ResultSet = ejecutar($con, $SQL);
 $NumRows = mysqli_affected_rows($con);
 Desconectar($con);
 if ($NumRows == 1) {
+=======
+$conexion = Conectar();
+$ResultSet = Ejecutar($conexion, $SQL);
+$Exit = Desconectar($conexion);
+$pep = mysqli_num_rows($ResultSet);
+if ($pep == 1) {
+>>>>>>> 12c9d0c3e64a85cda7f2e34dd8ae8990fbe8398f
     print ("Se actualizo el propietario con exito");
 } else {
     print ("No se pudo actualizar el propietario");

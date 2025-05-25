@@ -5,7 +5,7 @@ $SQL = "SELECT * FROM circulacionvehiculo";
 $ResultSet = Ejecutar($Con, $SQL);
 $xml = new DOMDocument('1.0', 'UTF-8');
 $xml->formatOutput = true;
-
+    
 $root = $xml->createElement("Conductores");
 $xml->appendChild($root);
 
