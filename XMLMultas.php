@@ -1,8 +1,8 @@
 <?php
-include("controlador.php");
-$Con = conectar();
+include("Controlador.php");
+$Con = Conectar();
 $SQL = "SELECT * FROM multas1";
-$ResultSet = ejecutar($Con, $SQL);
+$ResultSet = Ejecutar($Con, $SQL);
 $xml = new DOMDocument('1.0', 'UTF-8');
 $xml->formatOutput = true;
 

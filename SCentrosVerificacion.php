@@ -14,11 +14,11 @@
 
 
     $SQL = "SELECT * FROM centros_verificacion WHERE $atributo LIKE '$criterio';";
-    include("controlador.php");
+    include("Controlador.php");
 
-    $conexion = conectar();
+    $conexion = Conectar();
 
-    $ResultSet = ejecutar($conexion, $SQL);
+    $ResultSet = Ejecutar($conexion, $SQL);
 
     $n = mysqli_num_rows($ResultSet);
     $columnas = mysqli_field_count($conexion);

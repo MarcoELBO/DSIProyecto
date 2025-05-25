@@ -1,6 +1,6 @@
 <?php
 $NO_CENTRO = $_REQUEST['NO_CENTRO'];
-$SQL = "DELETE FROM centrosverificacion WHERE NO_CENTRO = '$NO_CENTRO'";
+$SQL = "DELETE FROM centros_verificacion WHERE NO_CENTRO = '$NO_CENTRO'";
 
 include("Controlador.php");
 $Conexion = Conectar();

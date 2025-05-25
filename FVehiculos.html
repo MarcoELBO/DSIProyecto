@@ -20,12 +20,24 @@
                     <input type="text" name="Marca" id="Marca" required class="form__input">
                 </div>
                 <div class="form__group">
+                    <label for="Submarca" class="form__label">Submarca:</label>
+                    <input type="text" name="Submarca" id="Submarca" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Linea" class="form__label">Línea:</label>
+                    <input type="text" name="Linea" id="Linea" required class="form__input">
+                </div>
+                <div class="form__group">
                     <label for="Color" class="form__label">Color:</label>
                     <input type="text" name="Color" id="Color" required class="form__input">
                 </div>
                 <div class="form__group">
                     <label for="Modelo" class="form__label">Modelo:</label>
                     <input type="text" name="Modelo" id="Modelo" required class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="Numeroserie" class="form__label">Número de Serie:</label>
+                    <input type="text" name="Numeroserie" id="Numeroserie" required class="form__input">
                 </div>
                 <div class="form__group">
                     <label for="Puertas" class="form__label">Número de Puertas:</label>
@@ -40,8 +52,20 @@
                     <input type="number" name="Cilindraje" id="Cilindraje" class="form__input">
                 </div>
                 <div class="form__group">
-                    <label for="Combustible" class="form__label">Combustible (ID):</label>
+                    <label for="Combustible" class="form__label">Combustible (1 - Gasolina, 2 - Electrico):</label>
                     <input type="number" name="Combustible" id="Combustible" class="form__input">
+                </div>
+                <div class="form__group">
+                    <label for="capacidad" class="form__label">Capacidad (litros):</label>
+                    <input type="number" name="capacidad" id="capacidad" class="form__input">
+                </div>
+                                <div class="form__group">
+                    <label for="transmision" class="form__label">Transmisión (1 - Manual, 2 - Automática):</label>
+                    <input type="number" name="transmision" id="transmision" class="form__input">
+                </div>
+                                <div class="form__group">
+                    <label for="origen" class="form__label">Origen:</label>
+                    <input type="text" name="origen" id="origen" class="form__input">
                 </div>
                 <div class="form__group form__group--actions">
                     <input type="submit" value="Registrar Vehículo" class="form__button">
@@ -49,5 +73,6 @@
             </form>
         </section>
     </main>
+    <script src="./js/manejadorExcepciones.js"></script>
 </body>
 </html>

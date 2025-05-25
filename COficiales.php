@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include("Controlador.php");
-    $conexion = conectar();
+    $conexion = Conectar();
 
     // Obtener la consulta SQL desde el formulario
     $sql = $_POST['sql'];
-    $ResultSet = ejecutar($conexion, $sql);
+    $ResultSet = Ejecutar($conexion, $sql);
 
     // Configurar encabezados para la descarga del archivo CSV
     header('Content-Type: text/csv; charset=utf-8');

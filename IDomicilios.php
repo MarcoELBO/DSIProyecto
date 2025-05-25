@@ -11,11 +11,11 @@ $REFERENCIAS = $_POST['REFERENCIAS'];
 
 $SQL = "INSERT INTO domicilios VALUES (NULL ,'$CALLE', '$CP', '$COLONIA', '$NUM_INT', '$NUM_EXT', '$ESTADO', '$MUNICIPIO', '$REFERENCIAS')";
 
-include("controlador.php");
+include("Controlador.php");
 
-$Conexion = conectar();
+$Conexion = Conectar();
 
-$ResultSet = ejecutar($Conexion, $SQL);
+$ResultSet = Ejecutar($Conexion, $SQL);
 
 $Desconectar = Desconectar($Conexion);
 

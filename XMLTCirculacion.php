@@ -1,6 +1,6 @@
 <?php
-include("controlador.php");
-$Con = conectar();
+include("Controlador.php");
+$Con = Conectar();
 $SQL = "SELECT * FROM circulacionvehiculo";
 $ResultSet = Ejecutar($Con, $SQL);
 $xml = new DOMDocument('1.0', 'UTF-8');

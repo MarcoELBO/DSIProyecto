@@ -9,7 +9,7 @@ include("Contralor.php");
 
 $Con = Conectar();
 $ResultSet = Ejecutar($Con, $SQL);
-$Exit = desconectar($conexion);
+$Exit = Desconectar($conexion);
 if (mysqli_num_rows($ResultSet) == 1) {
     print ("Se actualizo el propietario con exito");
 } else {
