@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Este bloque captura errores de red, JSON inválido, o cualquier otro error en el fetch
             console.error('Error en la solicitud:', error.message);
             alert('Ocurrió un error en la comunicación con el servidor. Por favor, intente de nuevo.');
-            alert('Detalles del error: ' + error.message); // Opcional: Muestra detalles del error en consola
+
         }
     }
 });
