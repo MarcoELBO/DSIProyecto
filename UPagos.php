@@ -15,7 +15,7 @@ if(
     $Hora = $_GET['Hora'];
     $Tarjeta_Asociada = $_GET['Tarjeta_Asociada'];
 
-    $SQL = "UPDATE Pagos SET 
+    $SQL = "UPDATE pagos SET 
     Servicio = '$Servicio', 
     Monto ='$Monto', 
     Fecha ='$Fecha', 

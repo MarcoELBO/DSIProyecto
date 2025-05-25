@@ -20,7 +20,7 @@ if(
     $DONADOR_ORG = $_GET['DONADOR_ORG'];
     $NUMERO_EMERGENCIA = $_GET['NUMERO_EMERGENCIA'];
 
-    $SQL = "UPDATE Conductores SET 
+    $SQL = "UPDATE conductores SET 
         NOMBRE = '$NOMBRE', 
         DOMICILIO ='$DOMICILIO',
         FOLIO_TC ='$FOLIO_TC',

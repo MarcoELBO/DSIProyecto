@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Licencias</title>
-</head>
+    <link rel="stylesheet" href="./css/FACCESO.css"> </head>
 
 <body>
     <?php
@@ -18,59 +18,70 @@
 
         $ID_LICENCIA = $_GET['ID_LICENCIA'];
         $Conexion = Conectar();
-        $ResultSet = Ejecutar($Conexion, "SELECT * FROM Licencias WHERE ID_LICENCIA = '$ID_LICENCIA'");
+        $ResultSet = Ejecutar($Conexion, "SELECT * FROM licencias WHERE ID_LICENCIA = '$ID_LICENCIA'");
+        if (mysqli_num_rows($ResultSet) == 0) {
+            echo "Error en la consulta: " . mysqli_error($Conexion);
+            exit;
+        }
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
     ?>
-    <form method="get" action="ULicencias.php">
-        <label><strong>Editar Licencias</strong></label>
-        <br><br>
+    <div class="container">
+        <form class="form" method="POST" action="ULicencias.php">
+            <h1 class="form__title">Editar Licencias</h1>
 
-        <label>ID_LICENCIA</label>
-        <br>
-        <input type="number" name="ID_LICENCIA" id="ID_LICENCIA" value="<?php echo $Row['ID_LICENCIA']; ?>" readonly>
-        <br>
+            <div class="form__group">
+                <label for="ID_LICENCIA" class="form__label">ID_LICENCIA</label>
+                <input type="number" name="ID_LICENCIA" id="ID_LICENCIA" class="form__input form__input--readonly" value="<?php echo htmlspecialchars($Row['ID_LICENCIA'] ?? ''); ?>" readonly>
+            </div>
 
-        <label>CONDUCTOR</label>
-        <br>
-        <input type="text" name="CONDUCTOR" id="CONDUCTOR" value="<?php echo $Row['CONDUCTOR']; ?>" required>
-        <br>
+            <div class="form__group">
+                <label for="CONDUCTOR" class="form__label">CONDUCTOR</label>
+                <input type="text" name="CONDUCTOR" id="CONDUCTOR" class="form__input" value="<?php echo htmlspecialchars($Row['CONDUCTOR'] ?? ''); ?>" required>
+            </div>
 
-        <label>FECHA_EXPEDICION</label>
-        <br>
-        <input type="date" name="FECHA_EXPEDICION" id="FECHA_EXPEDICION" value="<?php echo $Row['FECHA_EXPEDICION']; ?>" required>
-        <br>
+            <div class="form__group">
+                <label for="FECHA_EXPEDICION" class="form__label">FECHA_EXPEDICION</label>
+                <input type="date" name="FECHA_EXPEDICION" id="FECHA_EXPEDICION" class="form__input" value="<?php echo htmlspecialchars($Row['FECHA_EXPEDICION'] ?? ''); ?>" required>
+            </div>
 
-        <label>FECHA_VALIDACION</label>
-        <br>
-        <input type="date" name="FECHA_VALIDACION" id="FECHA_VALIDACION" value="<?php echo $Row['FECHA_VALIDACION']; ?>" required>
-        <br>
-        <label>ANTIGUEDAD</label>
-        <br>
-        <input type="text" name="ANTIGUEDAD" id="ANTIGUEDAD" value="<?php echo $Row['ANTIGUEDAD']; ?>" required>
-        <br>
-        <label>OBSERVACIONES</label>
-        <br>
-        <input type="text" name="OBSERVACIONES" id="OBSERVACIONES" value="<?php echo $Row['OBSERVACIONES']; ?>" required>
-        <br>
-        <label>FIRMA</label>
-        <br>
-        <input type="text" name="FIRMA" id="FIRMA" value="<?php echo $Row['FIRMA']; ?>" required>
-        <br>
-        <label>DOMICILIO</label>
-        <br>
-        <input type="text" name="DOMICILIO" id="DOMICILIO" value="<?php echo $Row['DOMICILIO']; ?>" required>
-        <br>
-        <label>FUNDAMENTO_LEGAL</label>
-        <br>
-        <input type="text" name="FUNDAMENTO_LEGAL" id="FUNDAMENTO_LEGAL" value="<?php echo $Row['FUNDAMENTO_LEGAL']; ?>" required>
-        <br>
-        <label>FOTO</label>
-        <br>
-        <input type="text" name="FOTO" id="FOTO" value="<?php echo $Row['FOTO']; ?>" required>
-        <br>
-        <input type="submit" value="Actualizar Licencia">
-        <br>
-    </form>
+            <div class="form__group">
+                <label for="FECHA_VALIDACION" class="form__label">FECHA_VALIDACION</label>
+                <input type="date" name="FECHA_VALIDACION" id="FECHA_VALIDACION" class="form__input" value="<?php echo htmlspecialchars($Row['FECHA_VALIDACION'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="ANTIGUEDAD" class="form__label">ANTIGUEDAD</label>
+                <input type="text" name="ANTIGUEDAD" id="ANTIGUEDAD" class="form__input" value="<?php echo htmlspecialchars($Row['ANTIGUEDAD'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="OBSERVACIONES" class="form__label">OBSERVACIONES</label>
+                <input type="text" name="OBSERVACIONES" id="OBSERVACIONES" class="form__input" value="<?php echo htmlspecialchars($Row['OBSERVACIONES'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="FIRMA" class="form__label">FIRMA</label>
+                <input type="text" name="FIRMA" id="FIRMA" class="form__input" value="<?php echo htmlspecialchars($Row['FIRMA'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="DOMICILIO" class="form__label">DOMICILIO</label>
+                <input type="text" name="DOMICILIO" id="DOMICILIO" class="form__input" value="<?php echo htmlspecialchars($Row['DOMICILIO'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="FUNDAMENTO_LEGAL" class="form__label">FUNDAMENTO_LEGAL</label>
+                <input type="text" name="FUNDAMENTO_LEGAL" id="FUNDAMENTO_LEGAL" class="form__input" value="<?php echo htmlspecialchars($Row['FUNDAMENTO_LEGAL'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="FOTO" class="form__label">FOTO</label>
+                <input type="text" name="FOTO" id="FOTO" class="form__input" value="<?php echo htmlspecialchars($Row['FOTO'] ?? ''); ?>" required>
+            </div>
+
+            <button type="submit" class="form__button">Actualizar Licencia</button>
+        </form>
+    </div>
 </body>
 </html>

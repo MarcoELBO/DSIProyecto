@@ -17,7 +17,7 @@ if(
     $VIGENCIA = $_GET['VIGENCIA'];
     $Fecha_expedicion = $_GET['Fecha_expedicion'];
 
-    $SQL = "UPDATE Tarjetas_Circulacion SET 
+    $SQL = "UPDATE tarjetas_circulacion SET 
         Vehiculo = '$Vehiculo', 
         Propietario ='$Propietario', 
         Tipo_Servicio ='$Tipo_Servicio', 

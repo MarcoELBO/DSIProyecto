@@ -29,7 +29,7 @@ if(
     $FOLIO_PREVIO = $_GET['FOLIO_PREVIO'];
     $VIGENCIA = $_GET['VIGENCIA'];
 
-    $SQL = "UPDATE Tarjetas_Verificacion SET 
+    $SQL = "UPDATE tarjetas_verificacion SET 
         VEHICULO = '$VEHICULO', 
         DOMICILIO ='$DOMICILIO', 
         TC ='$TC', 

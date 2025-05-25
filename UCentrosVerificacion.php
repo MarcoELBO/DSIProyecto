@@ -15,7 +15,7 @@ if(
     $DOMICILIO = $_GET['DOMICILIO'];
     $TIPO_CENTRO = $_GET['TIPO_CENTRO'];
 
-    $SQL = "UPDATE Centros_Verificacion SET 
+    $SQL = "UPDATE centros_verificacion SET 
         NO_LINEA = '$NO_LINEA', 
         VERIFICACION ='$VERIFICACION', 
         NOMBRE ='$NOMBRE', 

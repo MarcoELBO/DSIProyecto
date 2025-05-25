@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Vehiculos</title>
-</head>
+    <title>Editar Vehículos</title>
+    <link rel="stylesheet" href="./css/FACCESO.css">  </head>
 
 <body>
     <?php
@@ -18,75 +18,90 @@
 
         $Placa = $_GET['Placa'];
         $Conexion = Conectar();
-        $ResultSet = Ejecutar($Conexion, "SELECT * FROM Vehiculos WHERE Placa = '$Placa'");
+        $ResultSet = Ejecutar($Conexion, "SELECT * FROM vehiculos WHERE Placa = '$Placa'");
+        if (mysqli_num_rows($ResultSet) == 0) {
+            echo "Error en la consulta: " . mysqli_error($Conexion);
+            exit;
+        }
         $Row = mysqli_fetch_assoc($ResultSet);
         Desconectar($Conexion);
     ?>
-    <form method="get" action="UVehiculos.php">
-        <label><strong>Editar Vehiculos</strong></label>
-        <br><br>
+    <div class="container">
+        <form class="form" method="get" action="UVehiculos.php">
+            <h1 class="form__title">Editar Vehículos</h1>
 
-        <label>Placa</label>
-        <br>
-        <input type="text" name="Placa" id="Placa" value="<?php echo $Row['Placa']; ?>" readonly>
-        <br>
+            <div class="form__group">
+                <label for="Placa" class="form__label">Placa</label>
+                <input type="text" name="Placa" id="Placa" class="form__input form__input--readonly" value="<?php echo htmlspecialchars($Row['Placa'] ?? ''); ?>" readonly>
+            </div>
 
-        <label>Marca</label>
-        <br>
-        <input type="text" name="Marca" id="Marca" value="<?php echo $Row['Marca']; ?>" required>
-        <br>
+            <div class="form__group">
+                <label for="Marca" class="form__label">Marca</label>
+                <input type="text" name="Marca" id="Marca" class="form__input" value="<?php echo htmlspecialchars($Row['Marca'] ?? ''); ?>" required>
+            </div>
 
-        <label>SUBMARCA</label>
-        <br>
-        <input type="text" name="SUBMARCA" id="SUBMARCA" value="<?php echo $Row['SUBMARCA']; ?>" required>
-        <br>
+            <div class="form__group">
+                <label for="SUBMARCA" class="form__label">SUBMARCA</label>
+                <input type="text" name="SUBMARCA" id="SUBMARCA" class="form__input" value="<?php echo htmlspecialchars($Row['SUBMARCA'] ?? ''); ?>" required>
+            </div>
 
-        <label>LINEA</label>
-        <br>
-        <input type="text" name="LINEA" id="LINEA" value="<?php echo $Row['LINEA']; ?>" required>
-        <br>
-        <label>Color</label>
-        <br>
-        <input type="text" name="Color" id="Color" value="<?php echo $Row['Color']; ?>" required>
-        <br>
-        <label>Modelo</label>
-        <br>
-        <input type="text" name="Modelo" id="Modelo" value="<?php echo $Row['Modelo']; ?>" required>
-        <br>
-        <label>Numero_Serie</label>
-        <br>
-        <input type="text" name="Numero_Serie" id="Numero_Serie" value="<?php echo $Row['Numero_Serie']; ?>" required>
-        <br>
-        <label>Puertas</label>
-        <br>
-        <input type="text" name="Puertas" id="Puertas" value="<?php echo $Row['Puertas']; ?>" required>
-        <br>
-        <label>Asientos</label>
-        <br>
-        <input type="text" name="Asientos" id="Asientos" value="<?php echo $Row['Asientos']; ?>" required>
-        <br>
-        <label>Cilindraje</label>
-        <br>
-        <input type="text" name="Cilindraje" id="Cilindraje" value="<?php echo $Row['Cilindraje']; ?>" required>
-        <br>
-        <label>Combustible</label>
-        <br>
-        <input type="text" name="Combustible" id="Combustible" value="<?php echo $Row['Combustible']; ?>" required>
-        <br>
-        <label>Capacidad</label>
-        <br>
-        <input type="text" name="capacidad" id="capacidad" value="<?php echo $Row['capacidad']; ?>" required>
-        <br>
-        <label>TRASMISION</label>
-        <br>
-        <input type="text" name="TRASMISION" id="TRASMISION" value="<?php echo $Row['TRASMISION']; ?>" required>
-        <br>
-        <label>ORIGEN</label>
-        <br>
-        <input type="text" name="ORIGEN" id="ORIGEN" value="<?php echo $Row['ORIGEN']; ?>" required>
-        <br>
-        <input type="submit" value="Actualizar Vehiculo">
-        <br>
-    </form>
+            <div class="form__group">
+                <label for="LINEA" class="form__label">LÍNEA</label>
+                <input type="text" name="LINEA" id="LINEA" class="form__input" value="<?php echo htmlspecialchars($Row['LINEA'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Color" class="form__label">Color</label>
+                <input type="text" name="Color" id="Color" class="form__input" value="<?php echo htmlspecialchars($Row['Color'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Modelo" class="form__label">Modelo</label>
+                <input type="text" name="Modelo" id="Modelo" class="form__input" value="<?php echo htmlspecialchars($Row['Modelo'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Numero_Serie" class="form__label">Número de Serie</label>
+                <input type="text" name="Numero_Serie" id="Numero_Serie" class="form__input" value="<?php echo htmlspecialchars($Row['Numero_Serie'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Puertas" class="form__label">Puertas</label>
+                <input type="text" name="Puertas" id="Puertas" class="form__input" value="<?php echo htmlspecialchars($Row['Puertas'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Asientos" class="form__label">Asientos</label>
+                <input type="text" name="Asientos" id="Asientos" class="form__input" value="<?php echo htmlspecialchars($Row['Asientos'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Cilindraje" class="form__label">Cilindraje</label>
+                <input type="text" name="Cilindraje" id="Cilindraje" class="form__input" value="<?php echo htmlspecialchars($Row['Cilindraje'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="Combustible" class="form__label">Combustible</label>
+                <input type="text" name="Combustible" id="Combustible" class="form__input" value="<?php echo htmlspecialchars($Row['Combustible'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="capacidad" class="form__label">Capacidad</label>
+                <input type="text" name="capacidad" id="capacidad" class="form__input" value="<?php echo htmlspecialchars($Row['capacidad'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="TRASMISION" class="form__label">TRANSMISIÓN</label>
+                <input type="text" name="TRASMISION" id="TRASMISION" class="form__input" value="<?php echo htmlspecialchars($Row['TRASMISION'] ?? ''); ?>" required>
+            </div>
+
+            <div class="form__group">
+                <label for="ORIGEN" class="form__label">ORIGEN</label>
+                <input type="text" name="ORIGEN" id="ORIGEN" class="form__input" value="<?php echo htmlspecialchars($Row['ORIGEN'] ?? ''); ?>" required>
+            </div>
+
+            <button type="submit" class="form__button">Actualizar Vehículo</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -23,7 +23,7 @@ if(
     $FUNDAMENTO_LEGAL = $_GET['FUNDAMENTO_LEGAL'];
     $FOTO = $_GET['FOTO'];
 
-    $SQL = "UPDATE Licencias SET 
+    $SQL = "UPDATE licencias SET 
         CONDUCTOR = '$CONDUCTOR', 
         FECHA_EXPEDICION ='$FECHA_EXPEDICION', 
         FECHA_VALIDACION ='$FECHA_VALIDACION', 

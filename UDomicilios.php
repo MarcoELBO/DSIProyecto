@@ -21,7 +21,7 @@ if(
     $MUNICIPIO = $_GET['MUNICIPIO'];
     $REFERENCIAS = $_GET['REFERENCIAS'];
 
-    $SQL = "UPDATE Domicilios SET 
+    $SQL = "UPDATE domicilios SET 
         CALLE = '$CALLE', 
         CP ='$CP', 
         COLONIA ='$COLONIA', 

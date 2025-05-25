@@ -32,7 +32,7 @@ if(
 
     include("Controlador.php");
 
-    $SQL = "UPDATE Vehiculos SET 
+    $SQL = "UPDATE vehiculos SET 
         Marca='$Marca', 
         SUBMARCA='$SUBMARCA', 
         LINEA='$LINEA', 
