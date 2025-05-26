@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Principal</title>
     <link rel="stylesheet" href="./css/FACCESO.css">
+    <link rel="stylesheet" href="./css/a.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
@@ -122,20 +123,34 @@
             </ul>
         </nav>
     </header>
-    <main class="page-content">
-        <h1>Bienvenido al Sistema de Gestión</h1>
-        <p>Selecciona una opción del menú superior para empezar.</p>
-        <section>
-            <h2>Generar documento</h2>
-            <ul>
-                <li><a href="solicitarPDFLicencia.php">Licencia</a></li>
-                <li><a href="solicitarPDFMulta.php">Multas</a></li>
-                <li><a href="solicitarPDFRecaudanet.php">Recaudanet</a></li>
-                <li><a href="solicitarPDFTarjetaVerificacion.php">Tarjeta de Verificación</a></li>
-                <li><a href="solicitarPDFTCirculacion.php">Tarjeta de Circulación</a></li>
+   <main class="page-content">
+    <h1 class="page-content__title">Bienvenido al Sistema de Gestión</h1>
+    <p class="page-content__text">Selecciona una opción del menú superior para empezar.</p>
+    
+    <section class="generation-section">
+        <div class="generation-section__block">
+            <h2 class="generation-section__heading">Generar documento</h2>
+            <ul class="generation-section__list">
+                <li class="generation-section__list-item"><a href="solicitarPDFLicencia.php" class="generation-section__link">Licencia</a></li>
+                <li class="generation-section__list-item"><a href="solicitarPDFMulta.php" class="generation-section__link">Multas</a></li>
+                <li class="generation-section__list-item"><a href="solicitarPDFRecaudanet.php" class="generation-section__link">Recaudanet</a></li>
+                <li class="generation-section__list-item"><a href="solicitarPDFTarjetaVerificacion.php" class="generation-section__link">Tarjeta de Verificación</a></li>
+                <li class="generation-section__list-item"><a href="solicitarPDFTCirculacion.php" class="generation-section__link">Tarjeta de Circulación</a></li>
             </ul>
-        </section>
-    </main>
+        </div>
+        
+        <div class="generation-section__block">
+            <h2 class="generation-section__heading">Generar XML</h2>
+            <ul class="generation-section__list">
+                <li class="generation-section__list-item"><a href="solicitarXMLLicencia.php" class="generation-section__link">Licencia</a></li>
+                <li class="generation-section__list-item"><a href="solicitarXMLMulta.php" class="generation-section__link">Multas</a></li>
+                <li class="generation-section__list-item"><a href="solicitarXMLRecaudanet.php" class="generation-section__link">Recaudanet</a></li>
+                <li class="generation-section__list-item"><a href="solicitarXMLTarjetaVerificacion.php" class="generation-section__link">Tarjeta de Verificación</a></li>
+                <li class="generation-section__list-item"><a href="solicitarXMLTCirculacion.php" class="generation-section__link">Tarjeta de Circulación</a></li>
+            </ul>
+        </div>
+    </section>
+</main>
     <script src="./js/menu.js"></script>
 
 </body>

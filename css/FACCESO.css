@@ -507,3 +507,75 @@ body {
     padding: 5px 10px;
     font-size: 0.8em;
 } */
+
+/* Estilos para el bloque principal */
+.page-content {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.page-content__title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.page-content__text {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la sección de generación */
+.generation-section {
+    display: flex; /* Para poner los bloques uno al lado del otro */
+    gap: 40px; /* Espacio entre los bloques */
+    flex-wrap: wrap; /* Para que se ajusten en pantallas pequeñas */
+    margin-top: 20px;
+}
+
+.generation-section__block {
+    flex: 1; /* Para que ocupen espacio equitativamente */
+    min-width: 300px; /* Tamaño mínimo para cada bloque */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.generation-section__heading {
+    font-size: 1.8em;
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.generation-section__list {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.generation-section__list-item {
+    margin-bottom: 10px;
+}
+
+.generation-section__link {
+    display: block;
+    padding: 12px 15px;
+    background-color: #e9ecef;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+}
+
+.generation-section__link:hover {
+    background-color: #007bff;
+    color: #fff;
+}

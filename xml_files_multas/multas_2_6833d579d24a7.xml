@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Multas>
+  <Multa>
+    <Folio>2</Folio>
+    <Fecha>0001-01-01</Fecha>
+    <Hora>01:01:00</Hora>
+    <Lugar>1</Lugar>
+    <NOMBRE>JUANITO</NOMBRE>
+    <NO_LICENCIA>1</NO_LICENCIA>
+    <DOMICILIO>1</DOMICILIO>
+    <Placa>1</Placa>
+    <Marca>FORDd</Marca>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Motivo>1</Motivo>
+    <NombreO>Juan Ignacio</NombreO>
+    <ID_Oficial>1</ID_Oficial>
+    <Observaciones>1</Observaciones>
+  </Multa>
+  <Multa>
+    <Folio>2</Folio>
+    <Fecha>0001-01-01</Fecha>
+    <Hora>01:01:00</Hora>
+    <Lugar>1</Lugar>
+    <NOMBRE>Marco Antonio</NOMBRE>
+    <NO_LICENCIA>1</NO_LICENCIA>
+    <DOMICILIO>1</DOMICILIO>
+    <Placa>1</Placa>
+    <Marca>FORDd</Marca>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Motivo>1</Motivo>
+    <NombreO>Juan Ignacio</NombreO>
+    <ID_Oficial>1</ID_Oficial>
+    <Observaciones>1</Observaciones>
+  </Multa>
+  <Multa>
+    <Folio>2</Folio>
+    <Fecha>0001-01-01</Fecha>
+    <Hora>01:01:00</Hora>
+    <Lugar>1</Lugar>
+    <NOMBRE>MARCO MALVADO</NOMBRE>
+    <NO_LICENCIA>1</NO_LICENCIA>
+    <DOMICILIO>1</DOMICILIO>
+    <Placa>1</Placa>
+    <Marca>FORDd</Marca>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Motivo>1</Motivo>
+    <NombreO>Juan Ignacio</NombreO>
+    <ID_Oficial>1</ID_Oficial>
+    <Observaciones>1</Observaciones>
+  </Multa>
+  <Multa>
+    <Folio>2</Folio>
+    <Fecha>0001-01-01</Fecha>
+    <Hora>01:01:00</Hora>
+    <Lugar>1</Lugar>
+    <NOMBRE>VIRIDIANA</NOMBRE>
+    <NO_LICENCIA>1</NO_LICENCIA>
+    <DOMICILIO>1</DOMICILIO>
+    <Placa>1</Placa>
+    <Marca>FORDd</Marca>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Motivo>1</Motivo>
+    <NombreO>Juan Ignacio</NombreO>
+    <ID_Oficial>1</ID_Oficial>
+    <Observaciones>1</Observaciones>
+  </Multa>
+</Multas>

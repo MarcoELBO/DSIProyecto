@@ -1,29 +1,119 @@
 <?php
-    include_once("proteccion.php");
-    validar_token('T', true);
-include("Controlador.php");
-$Con = Conectar();
-$SQL = "SELECT * FROM vehiculotcp";
-$ResultSet = Ejecutar($Con, $SQL);
-$xml = new DOMDocument('1.0', 'UTF-8');
-$xml->formatOutput = true;
+// Iniciar el buffering de salida para controlar los encabezados HTTP.
+ob_start();
 
-$root = $xml->createElement("Conductores");
-$xml->appendChild($root);
+// --- 1. Inclusión de la librería de protección y validación del token ---
+// Asegúrate de que 'proteccion.php' contiene las funciones generador_token y validar_token
+// adaptadas para usar cookies.
+include_once("proteccion.php");
+validar_token('T', true);
 
-while ($fila = mysqli_fetch_assoc($ResultSet)) {
-    $conductor = $xml->createElement("Conductor");
 
-    foreach ($fila as $clave => $valor) {
-        $elemento = $xml->createElement($clave, htmlspecialchars($valor));
-        $conductor->appendChild($elemento);
+
+// --- 2. Configuración de la Carpeta de Destino para XML ---
+// Ruta relativa donde se almacenarán los XML. Asegúrate que esta ruta es accesible por el navegador.
+// Usamos un nombre de carpeta diferente para vehículos
+const XML_STORAGE_DIR_VEHICULOS = 'xml_files/'; 
+
+// En este script, no hay un 'id' de entrada, así que siempre generará todos los datos de vehiculotcp.
+
+// --- 3. Conexión a la Base de Datos ---
+// Asegúrate de que 'Controlador.php' contenga las funciones Conectar(), Ejecutar(), Desconectar().
+include("Controlador.php"); 
+
+$Conexion = null;
+$ResultSetVehiculos = null;
+
+$id = isset($_REQUEST["id"]) ? $_REQUEST["id"] : ''; 
+try {
+    $Conexion = Conectar();
+
+    if (!$Conexion) {
+        throw new Exception("Error al conectar a la base de datos.");
     }
 
-    $root->appendChild($conductor);
+    // --- 4. Creación del Objeto DOMDocument para XML ---
+    $xml = new DOMDocument('1.0', 'UTF-8');
+    $xml->formatOutput = true; 
+
+    // El nodo raíz según tu script original es "Conductores"
+    $root = $xml->createElement("Conductores"); 
+    $xml->appendChild($root);
+
+    // --- 5. Preparación de la Consulta SQL ---
+    // ¡¡¡ADVERTENCIA DE SEGURIDAD CRÍTICA!!!
+    // Esta consulta es VULNERABLE a inyección SQL si las entradas del usuario se usaran en ella.
+    // Aunque actualmente no usas un input 'id' para filtrar, es una buena práctica estar al tanto.
+    // Para producción, DEBES USAR SENTENCIAS PREPARADAS (prepared statements).
+    $SQL_Vehiculos = "SELECT * FROM vehiculotcp WHERE ID_Pago = '$id'"; // Cambiado a 'ID_Pago' según tu script
+    // Si $id está vacío, se obtendrán todos los vehículos.
+    $ResultSetVehiculos = Ejecutar($Conexion, $SQL_Vehiculos);
+
+    if (!$ResultSetVehiculos) {
+        throw new Exception("Error en la consulta SQL para vehículos: " . mysqli_error($Conexion));
+    }
+
+    if (mysqli_num_rows($ResultSetVehiculos) === 0) {
+        // 404 Not Found si no se encuentran vehículos
+        http_response_code(404);
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => 'No se encontraron vehículos en la base de datos.']);
+        ob_end_clean();
+        exit;
+    }
+
+    while ($fila = mysqli_fetch_assoc($ResultSetVehiculos)) {
+        // El nodo para cada entrada según tu script original es "Conductor"
+        $conductorNode = $xml->createElement("Conductor"); 
+        foreach ($fila as $clave => $valor) {
+            // Reemplazar caracteres no válidos en nombres de nodos XML si es necesario
+            $valid_clave = preg_replace('/[^a-zA-Z0-9_]/', '', $clave);
+            $elemento = $xml->createElement($valid_clave, htmlspecialchars($valor));
+            $conductorNode->appendChild($elemento);
+        }
+        $root->appendChild($conductorNode);
+    }
+    mysqli_free_result($ResultSetVehiculos);
+
+    // --- 6. Verificar y Crear la Carpeta de Almacenamiento ---
+    if (!is_dir(XML_STORAGE_DIR_VEHICULOS)) {
+        if (!mkdir(XML_STORAGE_DIR_VEHICULOS, 0755, true)) {
+            throw new Exception("Error al crear la carpeta de almacenamiento de XML para vehículos: " . XML_STORAGE_DIR_VEHICULOS);
+        }
+    }
+
+    // --- 7. Generar Nombre de Archivo Único y Guardar el XML ---
+    // El nombre base según tu script original es "Recaudanet"
+    $uniqueFileName = 'Recaudanet_' . uniqid() . '.xml';
+    $filePath = XML_STORAGE_DIR_VEHICULOS . $uniqueFileName;
+
+    if (!$xml->save($filePath)) {
+        throw new Exception("Error al guardar el archivo XML de vehículos en: " . $filePath);
+    }
+
+    // --- 8. Respuesta Exitosa ---
+    ob_end_clean(); // Limpia el búfer antes de enviar la respuesta JSON final.
+    http_response_code(200); // 200 OK
+    header('Content-Type: application/json');
+    echo json_encode([
+        'status' => 'success',
+        'message' => 'Archivo XML de vehículos generado y almacenado correctamente.',
+        'file_name' => $uniqueFileName,
+        // Devuelve la ruta completa y accesible para el navegador
+        'file_path' => XML_STORAGE_DIR_VEHICULOS . $uniqueFileName 
+    ]);
+
+} catch (Exception $e) {
+    ob_end_clean(); // Asegurarse de limpiar el búfer en caso de error.
+    http_response_code(500); // 500 Internal Server Error
+    header('Content-Type: application/json');
+    echo json_encode(['status' => 'error', 'message' => 'Fallo en el servidor al generar el XML de vehículos: ' . $e->getMessage()]);
+
+    error_log("Error en vehiculotcp.php: " . $e->getMessage() . " en línea " . $e->getLine());
+
+} finally {
+    if (isset($Conexion) && $Conexion) {
+        Desconectar($Conexion);
+    }
 }
-
-$xml->save("Recaudanet.xml");
-$Desconectar = Desconectar($Con);
-
-echo "Archivo Recaudanet.xml generado correctamente.";
 ?>

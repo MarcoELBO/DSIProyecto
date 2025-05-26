@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DatosVehiculares>
+  <Licencia>
+    <no_licencia>514</no_licencia>
+    <fecha_expedicion>2025-12-12</fecha_expedicion>
+    <fecha_validacion>2025-12-12</fecha_validacion>
+    <antiguedad>14</antiguedad>
+    <observaciones>NINGUNA</observaciones>
+    <firma>images/firmas/68324c6899a4f_Screenshot From 2025-04-08 21-10-38.png</firma>
+    <foto>images/fotos/68324c6899a4a_Screenshot From 2025-05-21 23-03-18.png</foto>
+    <fundamento_legal>NINGUNO</fundamento_legal>
+    <tipo_sangre>O</tipo_sangre>
+    <donador_organos>SI</donador_organos>
+    <numero_emergencia>4463063616</numero_emergencia>
+    <domicilio>Tijuana</domicilio>
+    <nombre>Marco Antonio</nombre>
+    <fecha_nacimiento>0001-02-01</fecha_nacimiento>
+    <cp>76210</cp>
+  </Licencia>
+</DatosVehiculares>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <Placa>1</Placa>
+    <Modelo>2000</Modelo>
+    <Color>VERDE</Color>
+    <Marca>FORDd</Marca>
+    <SUBMARCA>EXPLORER</SUBMARCA>
+    <capacidad>1250</capacidad>
+    <ID_Pago>1</ID_Pago>
+    <Fecha>2025-05-29</Fecha>
+    <Monto>450</Monto>
+    <Hora>14:23:11</Hora>
+  </Conductor>
+</Conductores>

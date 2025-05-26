@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <Tipo_Servicio>Publico</Tipo_Servicio>
+    <ID_TC>1</ID_TC>
+    <VIGENCIA>INDEFINIDA</VIGENCIA>
+    <Placa>1</Placa>
+    <RFC>RAO2234MA</RFC>
+    <Numero_Serie>204092GDGDGD2</Numero_Serie>
+    <Modelo>2000</Modelo>
+    <Domicilio>1</Domicilio>
+    <Marca>FORDd</Marca>
+    <SUBMARCA>EXPLORER</SUBMARCA>
+    <LINEA>GT</LINEA>
+    <Cilindraje>8</Cilindraje>
+    <capacidad>1250</capacidad>
+    <Fecha_expedicion>2025-05-22</Fecha_expedicion>
+    <Puertas>4</Puertas>
+    <Asientos>5</Asientos>
+    <Combustible>1</Combustible>
+    <TRASMISION>AUTOMATICA</TRASMISION>
+    <ORIGEN>EXTRANGERO</ORIGEN>
+    <Color>VERDE</Color>
+  </Conductor>
+</Conductores>

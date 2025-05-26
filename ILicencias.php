@@ -89,8 +89,8 @@ try {
     // Procesa el resultado de la operación
     if ($ResultSet == 1) {
         // Operación exitosa: Envía código 200 OK
-        http_response_code(200);
-        echo json_encode(['status' => 'success', 'message' => 'Registro de licencia guardado correctamente.']);
+        http_response_code(200); // 202 Accepted para indicar que la solicitud fue aceptada y procesada correctamente
+        echo json_encode(['status' => 'success', 'message' => 'Registro de licencia guardado correctamente.']); // Incluye el ID del nuevo registro
     } else {
         // Operación fallida por alguna razón
         // Incluye el mensaje de error de MySQL si está disponible para depuración

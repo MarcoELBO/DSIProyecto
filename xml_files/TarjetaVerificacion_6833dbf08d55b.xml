@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <tipo_servicio>3</tipo_servicio>
+    <marca>3</marca>
+    <submarca/>
+    <modelo>3</modelo>
+    <placa>3</placa>
+    <numero_serie/>
+    <clase/>
+    <tipo_combustible>3</tipo_combustible>
+    <identificacion_vehicular/>
+    <cilindros>3</cilindros>
+    <no_centro_verificacion>3</no_centro_verificacion>
+    <tecnico>3</tecnico>
+    <fecha_expedicion>0003-03-03</fecha_expedicion>
+    <hora_entrada>03:03:00</hora_entrada>
+    <hora_salida>15:03:00</hora_salida>
+    <folio>3</folio>
+    <semestre>3</semestre>
+    <vigencia/>
+    <motivo>3</motivo>
+  </Conductor>
+</Conductores>

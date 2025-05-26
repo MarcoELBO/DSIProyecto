@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <tipo_servicio>Publico</tipo_servicio>
+    <marca>FORDd</marca>
+    <submarca>EXPLORER</submarca>
+    <modelo>2000</modelo>
+    <placa>1</placa>
+    <numero_serie>204092GDGDGD2</numero_serie>
+    <clase>GT</clase>
+    <tipo_combustible>1</tipo_combustible>
+    <identificacion_vehicular>204092GDGDGD2</identificacion_vehicular>
+    <cilindros>8</cilindros>
+    <no_centro_verificacion>1</no_centro_verificacion>
+    <tecnico>juan</tecnico>
+    <fecha_expedicion>0011-11-11</fecha_expedicion>
+    <hora_entrada>00:00:01</hora_entrada>
+    <hora_salida>00:00:01</hora_salida>
+    <folio>1</folio>
+    <semestre>1</semestre>
+    <vigencia>INDEFINIDA</vigencia>
+    <motivo>1</motivo>
+  </Conductor>
+</Conductores>

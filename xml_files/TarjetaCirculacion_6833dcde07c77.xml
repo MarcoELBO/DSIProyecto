@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Conductores>
+  <Conductor>
+    <ID>1</ID>
+    <vigencia>INDEFINIDA</vigencia>
+    <tipo_servicio>Publico</tipo_servicio>
+    <placa>1</placa>
+    <rfc>RAO2234MA</rfc>
+    <numero_serie>204092GDGDGD2</numero_serie>
+    <modelo>2000</modelo>
+    <domicilio>Tijuana</domicilio>
+    <marca>FORDd</marca>
+    <submarca>EXPLORER</submarca>
+    <linea>GT</linea>
+    <cilindraje>8</cilindraje>
+    <capacidad>1250</capacidad>
+    <fecha_expedicion>2025-05-22</fecha_expedicion>
+    <puertas>4</puertas>
+    <asientos>5</asientos>
+    <combustible>1</combustible>
+    <transmision>AUTOMATICA</transmision>
+    <origen>EXTRANGERO</origen>
+    <color>VERDE</color>
+    <nombre>BAUTISTA OLVERA MARCO ELIAS</nombre>
+  </Conductor>
+</Conductores>
