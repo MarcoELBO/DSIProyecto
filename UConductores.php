@@ -22,7 +22,6 @@ if(
     $TIPO_SANGRE = $_GET['TIPO_SANGRE'];
     $DONADOR_ORG = $_GET['DONADOR_ORG'];
     $NUMERO_EMERGENCIA = $_GET['NUMERO_EMERGENCIA'];
-
     $SQL = "UPDATE conductores SET 
         NOMBRE = '$NOMBRE', 
         DOMICILIO ='$DOMICILIO',
@@ -37,6 +36,7 @@ if(
     include("Controlador.php");
 
     $Con = Conectar();
+    Ejecutar($Con, $sql_preventivo);
     $ResultSet = Ejecutar($Con, $SQL);
     $NumRows = mysqli_affected_rows($Con);
     Desconectar($Con);

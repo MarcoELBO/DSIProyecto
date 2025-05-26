@@ -25,7 +25,6 @@ if(
     $DOMICILIO = $_GET['DOMICILIO'];
     $FUNDAMENTO_LEGAL = $_GET['FUNDAMENTO_LEGAL'];
     $FOTO = $_GET['FOTO'];
-
     $SQL = "UPDATE licencias SET 
         CONDUCTOR = '$CONDUCTOR', 
         FECHA_EXPEDICION ='$FECHA_EXPEDICION', 
