@@ -31,7 +31,7 @@
         Desconectar($Conexion);
     ?>
     <div class="container">
-        <form class="form" method="POST" action="ULicencias.php">
+        <form class="form" method="get" action="ULicencias.php">
             <h1 class="form__title">Editar Licencias</h1>
 
             <div class="form__group">

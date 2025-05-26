@@ -27,7 +27,7 @@
                         <li class="dropdown__item"><a href="FSCentrosVerificacion.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FCentrosVerificacion.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDCentrosVerificacion.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUCentrosVerificacion.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateCV.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -36,7 +36,7 @@
                         <li class="dropdown__item"><a href="FSConductores.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FConductores.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDConductores.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUConductores.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateConductores.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -45,7 +45,7 @@
                         <li class="dropdown__item"><a href="FSDomicilios.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FDomicilios.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDDomicilios.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUDomicilios.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateDomicilios.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -54,7 +54,7 @@
                         <li class="dropdown__item"><a href="FSLicencias.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FLicencias.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDLicencias.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FULicencias.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateLicencias.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -63,7 +63,7 @@
                         <li class="dropdown__item"><a href="FSOficiales.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FOficiales.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDOficiales.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUOficiales.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateOficiales.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -72,7 +72,7 @@
                         <li class="dropdown__item"><a href="FSPagos.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FPagos.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDPagos.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUPagos.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdatePagos.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -81,7 +81,7 @@
                         <li class="dropdown__item"><a href="FSPropietarios.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FPropietarios.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDPropietarios.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUPropietarios.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdatePropietarios.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -90,7 +90,7 @@
                         <li class="dropdown__item"><a href="FSTarjetas_Circulacion.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FTarjetasCirculacion.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDTarjetasCirculacion.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUTarjetasCirculacion.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateTC.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -99,7 +99,7 @@
                         <li class="dropdown__item"><a href="FSTarjetas_Verificacion.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FTarjetasVerificacion.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDTarjetasVerificacion.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUTarjetasVerificacion.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateTV.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                 <li class="nav-list__item dropdown">
@@ -108,7 +108,7 @@
                         <li class="dropdown__item"><a href="FSVehiculos.php" class="dropdown__link">CONSULTAR</a></li>
                         <li class="dropdown__item"><a href="FVehiculos.php" class="dropdown__link">INSERTAR</a></li>
                         <li class="dropdown__item"><a href="FDVehiculos.php" class="dropdown__link">ELIMINAR</a></li>
-                        <li class="dropdown__item"><a href="FUVehiculos.php" class="dropdown__link">MODIFICAR</a></li>
+                        <li class="dropdown__item"><a href="selectorUpdateVehiculos.php" class="dropdown__link">MODIFICAR</a></li>
                     </ul>
                 </li>
                  <li class="nav-list__item dropdown">

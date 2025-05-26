@@ -36,7 +36,6 @@ if(
     include("Controlador.php");
 
     $Con = Conectar();
-    Ejecutar($Con, $sql_preventivo);
     $ResultSet = Ejecutar($Con, $SQL);
     $NumRows = mysqli_affected_rows($Con);
     Desconectar($Con);
